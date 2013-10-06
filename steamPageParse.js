@@ -6,23 +6,43 @@ function checkNotification() {
         dataType: 'html',
         type: 'post',
         url: 'http://store.steampowered.com/',
-        success: function(data) {
-            console.log('ЫВОАРЫДЛВОАР ',$(data).find('div[id=header_notification_link]'));
+        success: function (data) {
+            console.log('ЫВОАРЫДЛВОАР ', $(data).find('div[id=header_notification_link]'));
             if ($(data).find('div[id=header_notification_link]').length == 0) {
                 $('#header_notification_dropdown').hide();
                 $('#authentication_link').show();
+                setNotificationIcon('?', 'error');
             } else {
                 var total_notification = 0;
-                if (!isNaN(parseInt($(data).find('div[id=header_notification_link]').text(),10))) {
+                if (!isNaN(parseInt($(data).find('div[id=header_notification_link]').text(), 10))) {
                     total_notification = parseInt($(data).find('div[id=header_notification_link]').text());
                 }
+                setNotificationIcon(total_notification.toString(), 'success');
                 setNotification($(data).find('div[id=header_notification_dropdown]'));
             }
         },
-        error: function() {
-            setTimeout(checkNotification,10*1000);
+        error: function () {
+            setTimeout(checkNotification, 10 * 1000);
         }
     });
+}
+
+function setNotificationIcon(value, status) {
+    switch (status) {
+        case 'success':
+            chrome.browserAction.setBadgeBackgroundColor({ color: [0, 100, 0, 255] });
+            break;
+        case 'processing':
+            chrome.browserAction.setBadgeBackgroundColor({ color: [0, 100, 0, 100] });
+            break;
+        case 'error':
+            chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
+            break;
+        default:
+            break;
+    }
+
+    chrome.browserAction.setBadgeText({text: value});
 }
 
 function setNotification(notification_dropdown) {
@@ -41,6 +61,7 @@ function setNotification(notification_dropdown) {
     $('.note_messages').text(notification_dropdown.find('a[class*=header_notification_offlinemessage]').text());
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
+    setNotificationIcon('?', 'processing');
     checkNotification();
 });
