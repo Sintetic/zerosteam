@@ -12,9 +12,6 @@
     },
 
     "permissions": [
-        "http://*/*",
-        "https://*/*",
-        "http://*/",
         "http://store.steampowered.com/*"
     ],
 
