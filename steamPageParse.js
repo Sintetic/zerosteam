@@ -1,24 +1,29 @@
+/*Проверка новых уведомлений с сервера Steam
+ * void
+ * */
 function checkNotification() {
     $.ajax({
-        async: false,
+        async: true, //при false - тормозит открытие плашки
         cache: false,
         data: null,
         dataType: 'html',
         type: 'post',
         url: 'http://store.steampowered.com/',
         success: function (data) {
-            console.log('ЫВОАРЫДЛВОАР ', $(data).find('div[id=header_notification_link]'));
-            if ($(data).find('div[id=header_notification_link]').length == 0) {
-                $('#header_notification_dropdown').hide();
-                $('#authentication_link').show();
-                setNotificationIcon('?', 'error');
-            } else {
-                var total_notification = 0;
-                if (!isNaN(parseInt($(data).find('div[id=header_notification_link]').text(), 10))) {
-                    total_notification = parseInt($(data).find('div[id=header_notification_link]').text());
+            var page = $(data).find('div#header_notification_link'); //получение кнопки вызова меню
+            if (page.length == 0) { //авторизации нет
+                $('.menu.notAuthorized').show();
+                $('.menu.authorized').hide();
+                setNotificationIcon('error', '?');
+            } else { //авторизация есть
+                if (!isNaN(parseInt(page.text(), 10))) { //есть новые уведомления
+                    var total_notification = parseInt(page.text(), 10);
+                } else { //нет новых уведомнений
+                    var total_notification = 0;
                 }
-                setNotificationIcon(total_notification.toString(), 'success');
-                setNotification($(data).find('div[id=header_notification_dropdown]'));
+                setNotificationIcon('success', total_notification.toString());
+                //обновление значений в меню плагина (передается DOM-блок с пунктами меню Steam)
+                setNotification($(data).find('div#header_notification_dropdown'));
             }
         },
         error: function () {
@@ -27,41 +32,51 @@ function checkNotification() {
     });
 }
 
-function setNotificationIcon(value, status) {
+/*Обновление текста на иконке плагина
+ * void
+ * status - статус (для установки соответствующей цветовой схемы)
+ * value - отображаемый текст
+ * */
+function setNotificationIcon(status, value) {
+    var setColor = chrome.browserAction.setBadgeBackgroundColor;
+    var setText = chrome.browserAction.setBadgeText;
     switch (status) {
         case 'success':
-            chrome.browserAction.setBadgeBackgroundColor({ color: [0, 100, 0, 255] });
+            setColor({ color: [0, 100, 0, 255] });
             break;
         case 'processing':
-            chrome.browserAction.setBadgeBackgroundColor({ color: [0, 100, 0, 100] });
+            setColor({ color: [0, 100, 0, 100] });
             break;
         case 'error':
-            chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
+            setColor({ color: [255, 0, 0, 255] });
             break;
         default:
-            break;
     }
-
-    chrome.browserAction.setBadgeText({text: value});
+    setText({text: value});
 }
 
-function setNotification(notification_dropdown) {
-    $('.note_comments').text(notification_dropdown.find('a.header_notification_comments').text());
-    $('.note_comments').attr('href', notification_dropdown.find('a.header_notification_comments').attr('href'));
-
-    $('.note_items').text(notification_dropdown.find('a.header_notification_items').text());
-    $('.note_items').attr('href', notification_dropdown.find('a.header_notification_items').attr('href'));
-
-    $('.note_invites').text(notification_dropdown.find('a.header_notification_invites').text());
-    $('.note_invites').attr('href', notification_dropdown.find('a.header_notification_invites').attr('href'));
-
-    $('.note_gifts').text(notification_dropdown.find('a.header_notification_gifts').text());
-    $('.note_gifts').attr('href', notification_dropdown.find('a.header_notification_gifts').attr('href'));
-
-    $('.note_messages').text(notification_dropdown.find('a[class*=header_notification_offlinemessage]').text());
+/*Обновление числовых значений в меню плагина
+ * void
+ * source - DOM-блок с пунктами меню Steam
+ * */
+function setNotification(source) {
+    $(source).find('.popup_menu_item').each(function (itemKey, item) { //обход всех пунктов меню Steam
+        var item = {
+            'name': $(item).attr('class').split('_').slice(-1)[0].replace(' ', ''), //для идентификации пункта меню
+            'link': $(item).attr('href'), //URI на соответствующую страницу
+            'value': parseInt($(item).text().split(': ')[1], 10) //количество обновлений
+        }
+        //console.log('ITEM[',itemKey,']: ',item);
+        if (item.name === 'offlinemessages') { //индивидуальная обработка сообщений
+            $('.menu .messages span').text(item.value);
+        } else { //остальные пункты меню обрабатываются этим конвеером
+            $('.menu .' + item.name).attr('href', item.link).find('span').text(item.value);
+        }
+    });
 }
 
+/*Инициализация*/
 $(document).ready(function () {
-    setNotificationIcon('?', 'processing');
+    setNotificationIcon('processing', '?');
     checkNotification();
 });
