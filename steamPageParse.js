@@ -46,17 +46,17 @@ function setNotificationIcon(value, status) {
 }
 
 function setNotification(notification_dropdown) {
-    $('.note_comments').text(notification_dropdown.find('a.header_notification_comments]').text());
-    $('.note_comments').attr('href', notification_dropdown.find('a.header_notification_comments]').attr('href'));
+    $('.note_comments').text(notification_dropdown.find('a.header_notification_comments').text());
+    $('.note_comments').attr('href', notification_dropdown.find('a.header_notification_comments').attr('href'));
 
-    $('.note_items').text(notification_dropdown.find('a.header_notification_items]').text());
-    $('.note_items').attr('href', notification_dropdown.find('a.header_notification_items]').attr('href'));
+    $('.note_items').text(notification_dropdown.find('a.header_notification_items').text());
+    $('.note_items').attr('href', notification_dropdown.find('a.header_notification_items').attr('href'));
 
-    $('.note_invites').text(notification_dropdown.find('a.header_notification_invites]').text());
-    $('.note_invites').attr('href', notification_dropdown.find('a.header_notification_invites]').attr('href'));
+    $('.note_invites').text(notification_dropdown.find('a.header_notification_invites').text());
+    $('.note_invites').attr('href', notification_dropdown.find('a.header_notification_invites').attr('href'));
 
-    $('.note_gifts').text(notification_dropdown.find('a[class*=header_notification_gifts]').text());
-    $('.note_gifts').attr('href', notification_dropdown.find('a[class*=header_notification_gifts]').attr('href'));
+    $('.note_gifts').text(notification_dropdown.find('a.header_notification_gifts').text());
+    $('.note_gifts').attr('href', notification_dropdown.find('a.header_notification_gifts').attr('href'));
 
     $('.note_messages').text(notification_dropdown.find('a[class*=header_notification_offlinemessage]').text());
 }
