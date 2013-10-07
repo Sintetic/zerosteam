@@ -8,14 +8,16 @@
     <title></title>
 </head>
 <body>
-    <a id="authentication_link" href="https://store.steampowered.com/login/" target="_blank" onclick="chrome.tabs.create();" style="display:none;">Авторизуйтесь</a>
+    <ul class="menu notAuthorized hidden">
+        <li><a id="authentication_link" href="https://store.steampowered.com/login/" target="_blank" onclick="chrome.tabs.create();">Авторизуйтесь</a></li>
+    </ul>
 
-    <ul class="menu">
-        <li><a class="note_comments" href="" onclick="chrome.tabs.create();">Комментарии</a></li>
-        <li><a class="note_items" href="" onclick="chrome.tabs.create();">Инвентарь</a></li>
-        <li><a class="note_invites" href="" onclick="chrome.tabs.create();">Приглашения</a></li>
-        <li><a class="note_gifts" href="" onclick="chrome.tabs.create();">Подарки</a></li>
-        <li><a class="note_messages" href="http://steamcommunity.com/chat" target="_blank" onclick="chrome.tabs.create();">Сообщения</a></li>
+    <ul class="menu authorized">
+        <li><a class="comments" href="" target="_blank" onclick="chrome.tabs.create();">Комментарии <span></span></a></li>
+        <li><a class="items" href="" target="_blank" onclick="chrome.tabs.create();">Инвентарь <span></span></a></li>
+        <li><a class="invites" href="" target="_blank" onclick="chrome.tabs.create();">Приглашения <span></span></a></li>
+        <li><a class="gifts" href="" target="_blank" onclick="chrome.tabs.create();">Подарки <span></span></a></li>
+        <li><a class="messages" href="http://steamcommunity.com/chat" target="_blank" onclick="chrome.tabs.create();">Сообщения <span></span></a></li>
     </ul>
 </body>
 </html>
