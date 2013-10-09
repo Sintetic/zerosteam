@@ -1,7 +1,7 @@
 /*Проверка новых уведомлений с сервера Steam
  * void
  * */
-function checkNotification() {
+function checkNotification(request_source) {
     $.ajax({
         async: true, //при false - тормозит открытие плашки
         cache: false,
@@ -23,15 +23,16 @@ function checkNotification() {
                 }
                 setNotificationIcon('success', total_notification.toString());
                 //обновление значений в меню плагина (передается DOM-блок с пунктами меню Steam)
-                setNotification($(data).find('div#header_notification_dropdown'));
+                if (request_source == 'popup') {
+                    setNotification($(data).find('div#header_notification_dropdown'));
+                }
             }
         },
         error: function () {
-            setTimeout(checkNotification, 10 * 1000);
+            setNotificationIcon('processing', '?');
         }
     });
 }
-
 /*Обновление текста на иконке плагина
  * void
  * status - статус (для установки соответствующей цветовой схемы)
@@ -74,9 +75,3 @@ function setNotification(source) {
         }
     });
 }
-
-/*Инициализация*/
-$(document).ready(function () {
-    setNotificationIcon('processing', '?');
-    checkNotification();
-});
