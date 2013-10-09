@@ -11,7 +11,10 @@
         "128": "128x128.png"
     },
 
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
     "permissions": [
+        "background",
         "http://store.steampowered.com/*"
     ],
 
@@ -19,5 +22,10 @@
         "default_title": "Открыть уведомления",
         "default_icon": "48x48.png",
         "default_popup": "popup.html"
+    },
+
+    "background": {
+        "page": "background.html"
     }
+
 }
