@@ -1,8 +1,7 @@
 {
-    "manifest_version": 2,
-
     "name": "ZeroSteam",
-    "version": "0.0.5",
+    "manifest_version": 2,
+    "version": "0.0.7",
 
     "icons": {
         "16": "16x16.png",
@@ -16,12 +15,12 @@
     "content_scripts": [
         {
             "matches": [ "http://steamcommunity.com/id/*/badges/" ],
-            "js": [ "content_badges_inspect.js" ],
+            "js": ["inceptionEngine.js", "content_badges_inspect.js" ],
             "run_at": "document_end"
-        }       ,
+        },
         {
             "matches": [ "http://steamcommunity.com/app/*/guides*" ],
-            "js": [ "content_guides_inspect.js" ],
+            "js": ["inceptionEngine.js", "content_guides_inspect.js" ],
             "run_at": "document_end"
         }
 
