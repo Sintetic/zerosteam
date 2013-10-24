@@ -3,6 +3,8 @@
     "manifest_version": 2,
     "version": "0.0.7",
 
+    "homepage_url": "http://sintetic.github.io/zerosteam/",
+
     "icons": {
         "16": "16x16.png",
         "32": "32x32.png",
