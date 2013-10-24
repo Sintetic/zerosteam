@@ -16,12 +16,12 @@
     "content_scripts": [
         {
             "matches": [ "http://steamcommunity.com/id/*/badges/" ],
-            "js": [ "jquery.js", "content_badges_inspect.js" ],
+            "js": [ "content_badges_inspect.js" ],
             "run_at": "document_end"
         }       ,
         {
             "matches": [ "http://steamcommunity.com/app/*/guides*" ],
-            "js": [ "jquery.js", "content_guides_inspect.js" ],
+            "js": [ "content_guides_inspect.js" ],
             "run_at": "document_end"
         }
 
@@ -33,6 +33,7 @@
     ],
 
     "permissions": [
+        "tabs",
         "background",
         "http://store.steampowered.com/*",
         "http://steamcommunity.com/id/*"
