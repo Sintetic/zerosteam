@@ -13,9 +13,29 @@
 
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
+    "content_scripts": [
+        {
+            "matches": [ "http://steamcommunity.com/id/*/badges/" ],
+            "js": [ "jquery.js", "content_badges_inspect.js" ],
+            "run_at": "document_end"
+        }       ,
+        {
+            "matches": [ "http://steamcommunity.com/app/*/guides*" ],
+            "js": [ "jquery.js", "content_guides_inspect.js" ],
+            "run_at": "document_end"
+        }
+
+
+    ],
+
+    "web_accessible_resources": [
+        "/content_badges.js", "/content_guides.js"
+    ],
+
     "permissions": [
         "background",
-        "http://store.steampowered.com/*"
+        "http://store.steampowered.com/*",
+        "http://steamcommunity.com/id/*"
     ],
 
     "browser_action": {
