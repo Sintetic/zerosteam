@@ -35,7 +35,7 @@
     ],
 
     "web_accessible_resources": [
-        "/content_badges.js", "/content_guides.js", "/content_get_my_steam_prices.js"
+        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js"
     ],
 
     "permissions": [
