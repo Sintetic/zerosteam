@@ -24,13 +24,18 @@
             "matches": [ "http://steamcommunity.com/app/*/guides*" ],
             "js": ["inceptionEngine.js", "content_guides_inspect.js" ],
             "run_at": "document_end"
+        },
+        {
+            "matches": [ "https://store.steampowered.com/account/" ],
+            "js": ["inceptionEngine.js", "content_prices_inspect.js" ],
+            "run_at": "document_end"
         }
 
 
     ],
 
     "web_accessible_resources": [
-        "/content_badges.js", "/content_guides.js"
+        "/content_badges.js", "/content_guides.js", "/content_get_my_steam_prices.js"
     ],
 
     "permissions": [
