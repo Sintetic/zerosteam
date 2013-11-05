@@ -29,13 +29,18 @@
             "matches": [ "https://store.steampowered.com/account/" ],
             "js": ["inceptionEngine.js", "content_prices_inspect.js" ],
             "run_at": "document_end"
+        },
+        {
+            "matches": [ "http://store.steampowered.com/" ],
+            "js": ["inceptionEngine.js", "content_vk_inspect.js" ],
+            "run_at": "document_end"
         }
 
 
     ],
 
     "web_accessible_resources": [
-        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js"
+        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js","/content_vk.js" ,"/vk_14x14.png"
     ],
 
     "permissions": [

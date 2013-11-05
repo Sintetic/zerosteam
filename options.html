@@ -4,8 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="jquery.js"></script>
     <script src="options.js"></script>
+    <link href="http://cdn.steamcommunity.com/public/css/skin_1/profile_sharedfiles.css?v=1820944400" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('http://cdn3.store.steampowered.com/public/images/v5/content_bg.png'); background-repeat: repeat-x; background-color: #000000; color: #ffffff">
 Проверять уведомления с периодичностью:
 <select id="interval">
     <option value="five">300</option>
@@ -14,6 +15,11 @@
     <option value="half">30</option>
 </select>
 <br>
+
+
+<input type="checkbox" id="badgesPageCheckbox" title="Показывать количество невыпавших карт"/>Показывать количество невыпавших карт<br>
+<input type="checkbox" id="guidesPageCheckbox" title="Открывать руководства в новой вкладке"/>Открывать руководства в новой вкладке<br>
+
 
 <div id="status"></div>
 <div id="current_value"></div>
