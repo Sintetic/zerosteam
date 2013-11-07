@@ -1,1 +1,0 @@
-inceptionJavaScriptCode("/content_vk.js");

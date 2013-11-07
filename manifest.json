@@ -16,7 +16,7 @@
 
     "content_scripts": [
         {
-            "matches": [ "http://steamcommunity.com/id/*/badges/" ],
+            "matches": [ "http://steamcommunity.com/id/*/badges/*" ],
             "js": ["inceptionEngine.js", "content_badges_inspect.js" ],
             "run_at": "document_end"
         },
@@ -32,7 +32,7 @@
         },
         {
             "matches": [ "http://store.steampowered.com/" ],
-            "js": ["inceptionEngine.js", "content_vk_inspect.js" ],
+            "js": ["inceptionEngine.js", "content_store_main_page_inspect.js" ],
             "run_at": "document_end"
         }
 
@@ -40,7 +40,7 @@
     ],
 
     "web_accessible_resources": [
-        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js","/content_vk.js" ,"/vk_14x14.png"
+        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js","/content_store_main_page.js" ,"/vk_14x14.png"
     ],
 
     "permissions": [
