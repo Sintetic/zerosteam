@@ -6,5 +6,6 @@ function backgroundCheckNotification() {
 $(document).ready(function () {
     setNotificationIcon('processing', '?');
     backgroundCheckNotification();
-    setInterval(backgroundCheckNotification, 60 * 1000); //todo разобраться почему не работает с анонимной функцией
+    setDefaultStorage();
+    setInterval(backgroundCheckNotification, 60 * 1000);
 });

@@ -7,6 +7,13 @@ function saveOptions() {
     localStorage["updateInterval"] = $("#interval").val();
     localStorage["useOnBadgesPage"] = $("#badgesPageCheckbox").prop('checked');
     localStorage["useOnGuidePageEngine"] = $("#guidesPageCheckbox").prop('checked');
+    //
+    localStorage["commonShowLabelNewMenuItem"] = $("#commonShowLabelNewMenuItem").prop('checked');
+    localStorage["mainStorePageShowHeaderButtonDownload"] = $("#mainStorePageShowHeaderButtonDownload").prop('checked');
+    localStorage["mainStorePageShowRealItemStoreBlock"] = $("#mainStorePageShowRealItemStoreBlock").prop('checked');
+    localStorage["mainStorePageShowRSSAndOtherBlock"] = $("#mainStorePageShowRSSAndOtherBlock").prop('checked');
+    localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"] = $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked');
+    localStorage["mainStorePageShowGiftBlock"] = $("#mainStorePageShowGiftBlock").prop('checked');
 
     // Update status to let user know options were saved.
     var status = $("#status");
@@ -27,6 +34,13 @@ function restoreOptions() {
     });
     $("#badgesPageCheckbox").prop('checked', getBoolean(localStorage["useOnBadgesPage"]));
     $("#guidesPageCheckbox").prop('checked', getBoolean(localStorage["useOnGuidePageEngine"]));
+    //
+    $("#commonShowLabelNewMenuItem").prop('checked', getBoolean(localStorage["commonShowLabelNewMenuItem"]));
+    $("#mainStorePageShowHeaderButtonDownload").prop('checked', getBoolean(localStorage["mainStorePageShowHeaderButtonDownload"]));
+    $("#mainStorePageShowRealItemStoreBlock").prop('checked', getBoolean(localStorage["mainStorePageShowRealItemStoreBlock"]));
+    $("#mainStorePageShowRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowRSSAndOtherBlock"]));
+    $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"]));
+    $("#mainStorePageShowGiftBlock").prop('checked', getBoolean(localStorage["mainStorePageShowGiftBlock"]));
 }
 
 $(document).ready(function () {

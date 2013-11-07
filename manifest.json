@@ -1,7 +1,7 @@
 {
     "name": "ZeroSteam",
     "manifest_version": 2,
-    "version": "0.0.7",
+    "version": "0.0.7.1",
 
     "homepage_url": "http://sintetic.github.io/zerosteam/",
 
@@ -17,22 +17,22 @@
     "content_scripts": [
         {
             "matches": [ "http://steamcommunity.com/id/*/badges/*" ],
-            "js": ["inceptionEngine.js", "content_badges_inspect.js" ],
+            "js": ["InceptionEngine.js", "content_badges_inspect.js" ],
             "run_at": "document_end"
         },
         {
             "matches": [ "http://steamcommunity.com/app/*/guides*" ],
-            "js": ["inceptionEngine.js", "content_guides_inspect.js" ],
+            "js": ["InceptionEngine.js", "content_guides_inspect.js" ],
             "run_at": "document_end"
         },
         {
             "matches": [ "https://store.steampowered.com/account/" ],
-            "js": ["inceptionEngine.js", "content_prices_inspect.js" ],
+            "js": ["InceptionEngine.js", "content_prices_inspect.js" ],
             "run_at": "document_end"
         },
         {
             "matches": [ "http://store.steampowered.com/" ],
-            "js": ["inceptionEngine.js", "content_store_main_page_inspect.js" ],
+            "js": ["InceptionEngine.js", "content_store_main_page_inspect.js" ],
             "run_at": "document_end"
         }
 
@@ -40,7 +40,7 @@
     ],
 
     "web_accessible_resources": [
-        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js","/content_store_main_page.js" ,"/vk_14x14.png"
+        "/content_badges.js", "/content_guides.js", "/content_get_steam_prices.js", "/content_store_main_page.js" , "/vk_14x14.png"
     ],
 
     "permissions": [
