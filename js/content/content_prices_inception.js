@@ -1,1 +1,1 @@
-inceptionJavaScriptCode("js/content/content_get_steam_prices.js");
+inceptionJavaScriptCode("js/content/content_prices.js");

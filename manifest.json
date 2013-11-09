@@ -40,7 +40,7 @@
     ],
 
     "web_accessible_resources": [
-        "js/content/content_badges.js", "js/content/content_guides.js", "js/content/content_get_steam_prices.js", "js/content/content_store_main_page.js" , "img/vk_14x14.png"
+        "js/content/content_badges.js", "js/content/content_guides.js", "js/content/content_prices.js", "js/content/content_store_main_page.js" , "img/vk_14x14.png"
     ],
 
     "permissions": [
