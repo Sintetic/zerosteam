@@ -1,0 +1,1 @@
+inceptionJavaScriptCode("js/content/content_store_main_page.js");
