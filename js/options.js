@@ -36,11 +36,13 @@ function restoreOptions() {
     $("#guidesPageCheckbox").prop('checked', getBoolean(localStorage["useOnGuidePageEngine"]));
     //
     $("#commonShowLabelNewMenuItem").prop('checked', getBoolean(localStorage["commonShowLabelNewMenuItem"]));
+
     $("#mainStorePageShowHeaderButtonDownload").prop('checked', getBoolean(localStorage["mainStorePageShowHeaderButtonDownload"]));
     $("#mainStorePageShowRealItemStoreBlock").prop('checked', getBoolean(localStorage["mainStorePageShowRealItemStoreBlock"]));
     $("#mainStorePageShowRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowRSSAndOtherBlock"]));
     $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"]));
     $("#mainStorePageShowGiftBlock").prop('checked', getBoolean(localStorage["mainStorePageShowGiftBlock"]));
+
 }
 
 $(document).ready(function () {

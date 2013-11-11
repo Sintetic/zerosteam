@@ -93,8 +93,8 @@ function content_get_steam_prices() {
     var part_four = "<div class='inner_rule'></div>";
     var end = "</div></div>";
 
-
-    jQuery('.rightcol').append(begin + part_one + "Потраченно на игры" + part_two + total_buy_games + part_three + part_four + part_one + "Потраченно на подарки" + part_two + total_buy_gifts + part_three +  part_four + part_one + "Потраченно на торговой площадке" + part_two + total_buy_in_market + part_three + part_four + part_one + "Заработано на торговой площадке" + part_two + total_sell_in_market + part_three + end);
+    jQuery('head').append("<link href='http://cdn.steamcommunity.com/public/css/skin_1/economy.css?v=1298124790' rel='stylesheet' type='text/css'>")
+    jQuery('.rightcol').append(begin + part_one + "Потраченно на игры" + part_two + total_buy_games + part_three + part_four + part_one + "Потраченно на подарки" + part_two + total_buy_gifts + part_three +  part_four + part_one + "Потраченно на торговой площадке" + part_two + total_buy_in_market + part_three + part_four + part_one + "Заработано на торговой площадке" + part_two + total_sell_in_market + part_three +"<div class='item_market_actions' id='iteminfo1_item_market_actions'><a class='item_market_action_button item_market_action_button_green' href='javascript:SellCurrentSelection()'><span class='item_market_action_button_edge item_market_action_button_left'></span><span class='item_market_action_button_contents'>Продать</span><span class='item_market_action_button_edge item_market_action_button_right'></span><span class='item_market_action_button_preload'></span></a></div>"+ end);
 }
 
 content_get_steam_prices();
