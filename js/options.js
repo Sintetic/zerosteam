@@ -14,6 +14,7 @@ function saveOptions() {
     localStorage["mainStorePageShowRSSAndOtherBlock"] = $("#mainStorePageShowRSSAndOtherBlock").prop('checked');
     localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"] = $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked');
     localStorage["mainStorePageShowGiftBlock"] = $("#mainStorePageShowGiftBlock").prop('checked');
+    localStorage["mainGameCardsCheckbox"] = $("#mainGameCardsCheckbox").prop('checked');
 
     // Update status to let user know options were saved.
     var status = $("#status");
@@ -42,6 +43,7 @@ function restoreOptions() {
     $("#mainStorePageShowRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowRSSAndOtherBlock"]));
     $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"]));
     $("#mainStorePageShowGiftBlock").prop('checked', getBoolean(localStorage["mainStorePageShowGiftBlock"]));
+    $("#mainGameCardsCheckbox").prop('checked', getBoolean(localStorage["mainGameCardsCheckbox"]));
 
 }
 

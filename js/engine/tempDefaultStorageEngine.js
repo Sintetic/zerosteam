@@ -10,5 +10,6 @@ function setDefaultStorage() {
         localStorage["mainStorePageShowRSSAndOtherBlock"] = true;
         localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"] = true;
         localStorage["mainStorePageShowGiftBlock"] = true;
+        localStorage["mainGameCardsCheckbox"] = true;
     }
 }

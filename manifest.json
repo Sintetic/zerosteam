@@ -49,6 +49,11 @@
             "matches": [ "http://steamcommunity.com/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_remove_new.js" ],
             "run_at": "document_end"
+        },
+        {
+            "matches": [ "http://steamcommunity.com/id/*/gamecards/*/"],
+            "js": ["/js/lib/jquery.js", "js/content/content_link_to_showcase.js" ],
+            "run_at": "document_end"
         }
 
 
