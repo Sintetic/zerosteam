@@ -67,7 +67,6 @@ function setNotification(source) {
             'link': $(item).attr('href'), //URI на соответствующую страницу
             'value': parseInt($(item).text().split(': ')[1], 10) //количество обновлений
         }
-        //console.log('ITEM[',itemKey,']: ',item);
         if (item.name === 'offlinemessages') { //индивидуальная обработка сообщений
             $('.menu .messages span').text(item.value);
         } else { //остальные пункты меню обрабатываются этим конвеером

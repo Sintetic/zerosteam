@@ -11,5 +11,7 @@ function setDefaultStorage() {
         localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"] = true;
         localStorage["mainStorePageShowGiftBlock"] = true;
         localStorage["mainGameCardsCheckbox"] = true;
+        localStorage["useOnBadgesPage"] = true;
+        localStorage["useOnGuidePageEngine"] = true;
     }
 }

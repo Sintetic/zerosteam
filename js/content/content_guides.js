@@ -1,5 +1,4 @@
-chrome.extension.sendRequest({method: "getLocalStorage", key: "guidesPageCheckbox"}, function(response) {
-    console.log(response.data);
+chrome.extension.sendRequest({method: "getLocalStorage", key: "useOnGuidePageEngine"}, function (response) {
     if (response.data != 'true') {
     } else {
         jQuery('.workshopItemCollectionContainer').each(function () {
@@ -7,6 +6,6 @@ chrome.extension.sendRequest({method: "getLocalStorage", key: "guidesPageCheckbo
             var old_inner_html = jQuery(this).html();
             jQuery(this).html('<a href=' + link + ' target="_blank">' + old_inner_html + '</a>');
             jQuery(this).find('div[class=workshopItemCollection]').attr('onclick', '');
-        } )
+        })
     }
-    });
+});
