@@ -10,10 +10,11 @@
 <label>Общие настройки</label><br>
 Проверять уведомления с периодичностью:
 <select id="interval">
+    <option value="never">never</option>
+    <option value="600">600</option>
     <option value="300">300</option>
     <option value="150">150</option>
     <option value="60">60</option>
-    <option value="30">30</option>
 </select>
 <br>
 <input type="checkbox" id="commonShowLabelNewMenuItem" title='Показывать label "Новинка"'/>Скрывать label "Новинка"<br>
@@ -31,6 +32,8 @@
 <input type="checkbox" id="guidesPageCheckbox" title="Открывать руководства в новой вкладке"/>Открывать руководства в новой вкладке<br>
 <input type="checkbox" id="mainGameCardsCheckbox" title="Подробности о значках"/>Показывать ссылку на подробности о значке<br>
 
+<label>Страница приложения</label><br>
+<input type="checkbox" id="appPageTryGetPriceFromSteamBuyCheckbox" title="Пытаться получить цену со SteamBuy"/>Пытаться получить цену со SteamBuy<br>
 
 <div id="status"></div>
 <div id="current_value"></div>

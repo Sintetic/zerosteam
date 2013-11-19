@@ -15,6 +15,7 @@ function saveOptions() {
     localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"] = $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked');
     localStorage["mainStorePageShowGiftBlock"] = $("#mainStorePageShowGiftBlock").prop('checked');
     localStorage["mainGameCardsCheckbox"] = $("#mainGameCardsCheckbox").prop('checked');
+    localStorage["appPageTryGetPriceFromSteamBuy"] = $("#appPageTryGetPriceFromSteamBuyCheckbox").prop('checked');
 
     // Update status to let user know options were saved.
     var status = $("#status");
@@ -44,7 +45,7 @@ function restoreOptions() {
     $("#mainStorePageShowVKItemInRSSAndOtherBlock").prop('checked', getBoolean(localStorage["mainStorePageShowVKItemInRSSAndOtherBlock"]));
     $("#mainStorePageShowGiftBlock").prop('checked', getBoolean(localStorage["mainStorePageShowGiftBlock"]));
     $("#mainGameCardsCheckbox").prop('checked', getBoolean(localStorage["mainGameCardsCheckbox"]));
-
+    $("#appPageTryGetPriceFromSteamBuyCheckbox").prop('checked', getBoolean(localStorage["appPageTryGetPriceFromSteamBuy"]));
 }
 
 $(document).ready(function () {
