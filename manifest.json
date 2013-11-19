@@ -60,7 +60,7 @@
     ],
 
     "web_accessible_resources": [
-        "img/vk_14x14.png"
+        "/img/vk_14x14.png"
     ],
 
     "permissions": [
