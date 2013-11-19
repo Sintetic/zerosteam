@@ -1,11 +1,30 @@
 function tryGetSteamBuyPrice() {
     var game_title = jQuery('.apphub_AppName').text();
     console.log('game_title: ' + game_title);
-    var game_title_from_search = game_title.replace(' ', '+');
+    var game_title_from_search = getCorrectGameTitle(game_title);
     console.log('game_title_from_search: ' + game_title_from_search);
     var search_page_string = "http://steambuy.com/search.php?searchstr=" + game_title_from_search;
     console.log('search_page_string : ' + search_page_string);
     getSteamBuySearchPage(search_page_string, game_title);
+}
+
+function getCorrectGameTitle(game_title) {
+    while (game_title.indexOf(' ') != -1) {
+        game_title = game_title.replace(' ', '+');
+    }
+    while (game_title.indexOf('™') != -1) {
+        game_title = game_title.replace('™', '');
+    }
+    while (game_title.indexOf('©') != -1) {
+        game_title = game_title.replace('©', '');
+    }
+    while (game_title.indexOf('®') != -1) {
+        game_title = game_title.replace('®', '');
+    }
+    while (game_title.indexOf('’') != -1) {
+        game_title = game_title.replace('’', '');
+    }
+    return game_title;
 }
 
 function getSteamBuySearchPage(search_page_string, game_title) {
