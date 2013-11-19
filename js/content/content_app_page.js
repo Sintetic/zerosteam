@@ -38,12 +38,18 @@ function getSteamBuySearchPage(search_page_string, game_title) {
         url: search_page_string,
         success: function (data) {
             console.log('getSteamBuySearchPageNotification: success');
-            var game_page_string = 'http://steambuy.com/' + $(data).find('.single-game.clearfix').attr('href');
-            console.log('game_page_link: ' + game_page_string);
-            var game_price = $($(data).find('.single-game-price')[0]).text();
-            console.log('game_price: ' + game_price);
-            var html = getHTMLForSteamBuyPrice(game_page_string, game_title, game_price);
-            jQuery(jQuery('.game_area_purchase_game')[0]).closest('div[class=game_area_purchase_game_wrapper]').after(html);
+            var page = $(data);
+            var part_of_game_page_link = page.find('.single-game.clearfix').attr('href');
+            if (part_of_game_page_link != null) {
+                var game_page_string = 'http://steambuy.com/' + part_of_game_page_link;
+                console.log('game_page_link: ' + game_page_string);
+                var game_price = $(page.find('.single-game-price')[0]).text();
+                console.log('game_price: ' + game_price);
+                var html = getHTMLForSteamBuyPrice(game_page_string, game_title, game_price);
+                jQuery(jQuery('.game_area_purchase_game')[0]).closest('div[class=game_area_purchase_game_wrapper]').after(html);
+            } else {
+                console.log('getSteamBuySearchPageNotification: not found app');
+            }
         },
         error: function () {
             console.log('getSteamBuySearchPageNotification: error');
