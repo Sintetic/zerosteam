@@ -75,13 +75,13 @@
     "browser_action": {
         "default_title": "Открыть уведомления",
         "default_icon": "48x48.png",
-        "default_popup": "popup.html"
+        "default_popup": "/html/popup.html"
     },
 
-    "options_page": "options.html",
+    "options_page": "/html/options.html",
 
     "background": {
-        "page": "background.html"
+        "page": "/html/background.html"
     }
 
 }
