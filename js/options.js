@@ -21,10 +21,6 @@ function saveOptions() {
     var status = $("#status");
     var current_value = $("#current_value");
     status.html("Настройки сохранены");
-    setTimeout(function () {
-        status.html("");
-        current_value.html("Текущее значение = " + localStorage["updateInterval"]);
-    }, 750);
 }
 
 // Restores select box state to saved value from localStorage.
