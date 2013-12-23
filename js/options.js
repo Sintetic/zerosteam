@@ -16,7 +16,7 @@ function saveOptions() {
     localStorage["mainStorePageShowGiftBlock"] = $("#mainStorePageShowGiftBlock").prop('checked');
     localStorage["mainGameCardsCheckbox"] = $("#mainGameCardsCheckbox").prop('checked');
     localStorage["appPageTryGetPriceFromSteamBuy"] = $("#appPageTryGetPriceFromSteamBuyCheckbox").prop('checked');
-
+    localStorage["showAllLanguageOnAppPage"] = $("#showAllLanguageOnAppPage").prop('checked');
     // Update status to let user know options were saved.
     var status = $("#status");
     var current_value = $("#current_value");
@@ -42,6 +42,7 @@ function restoreOptions() {
     $("#mainStorePageShowGiftBlock").prop('checked', getBoolean(localStorage["mainStorePageShowGiftBlock"]));
     $("#mainGameCardsCheckbox").prop('checked', getBoolean(localStorage["mainGameCardsCheckbox"]));
     $("#appPageTryGetPriceFromSteamBuyCheckbox").prop('checked', getBoolean(localStorage["appPageTryGetPriceFromSteamBuy"]));
+    $("#showAllLanguageOnAppPage").prop('checked', getBoolean(localStorage["showAllLanguageOnAppPage"]));
 }
 
 $(document).ready(function () {

@@ -10,3 +10,4 @@ chrome.extension.sendRequest({method: "getLocalStorage", key: "mainStorePageShow
         jQuery('.header_installsteam_btn_content').remove();
     }
 });
+

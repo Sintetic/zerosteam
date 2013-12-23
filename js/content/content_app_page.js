@@ -83,3 +83,16 @@ chrome.extension.sendRequest({method: "getLocalStorage", key: "appPageTryGetPric
         tryGetSteamBuyPrice();
     }
 });
+
+chrome.extension.sendRequest({method: "getLocalStorage", key: "showAllLanguageOnAppPage"}, function (response) {
+    if (response.data == 'true') {
+
+        jQuery('.game_language_options').next().remove();
+        var rows = document.getElementsByClassName('game_language_hidden');
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].style.display = 'table';
+        }
+
+
+    }
+});
