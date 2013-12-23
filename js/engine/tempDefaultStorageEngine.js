@@ -15,5 +15,6 @@ function setDefaultStorage() {
         localStorage["useOnGuidePageEngine"] = true;
         localStorage["showAllLanguageOnAppPage"] = true;
         localStorage["appPageTryGetPriceFromSteamBuy"] = false;
+        localStorage["autoSetCheckedOnBuySomething"] = false;
     }
 }

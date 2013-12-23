@@ -54,9 +54,12 @@
             "matches": [ "http://store.steampowered.com/app/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_app_page.js" ],
             "run_at": "document_end"
+        },
+        {
+            "matches": [ "https://store.steampowered.com/checkout?cart*"],
+            "js": ["/js/lib/jquery.js", "js/content/content_checkout_cart.js" ],
+            "run_at": "document_end"
         }
-
-
     ],
 
     "web_accessible_resources": [
