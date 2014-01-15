@@ -3,6 +3,10 @@ function getBoolean(string) {
     return string == "true";
 }
 
+
+var main_tabs = new Tabs('#main_tabs');
+
+
 function saveOptions() {
     localStorage["updateInterval"] = $("#interval").val();
     localStorage["useOnBadgesPage"] = $("#badgesPageCheckbox").prop('checked');
@@ -22,7 +26,7 @@ function saveOptions() {
     // Update status to let user know options were saved.
     var status = $("#status");
     var current_value = $("#current_value");
-    status.html("Настройки сохранены");
+
 }
 
 // Restores select box state to saved value from localStorage.
