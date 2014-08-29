@@ -3,10 +3,6 @@ function getBoolean(string) {
     return string == "true";
 }
 
-
-var main_tabs = new Tabs('#main_tabs');
-
-
 function saveOptions() {
     localStorage["updateInterval"] = $("#interval").val();
     localStorage["useOnBadgesPage"] = $("#badgesPageCheckbox").prop('checked');
