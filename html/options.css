@@ -2,7 +2,7 @@ body {
     background: #000000;
     background-position: center 105px;
     background-repeat: no-repeat;
-    background-image: url('../123.jpg');
+    background-image: url('../123(2).jpg');
     font-family: Arial, sans-serif;
     font-size: 15px;
     color: rgba(255, 255, 255, 0);
@@ -87,6 +87,18 @@ button {
     background:#262626;
     color: #ffffff;
     cursor: pointer;
+}
+
+#save:hover {
+    border: transparent;
+}
+
+#save:focus {
+    border: transparent;
+}
+
+#save:active {
+    border: transparent;
 }
 
 #help li {
