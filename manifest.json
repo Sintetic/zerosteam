@@ -1,14 +1,11 @@
 {
     "name": "ZeroSteam",
     "manifest_version": 2,
-    "version": "0.0.7.2",
+    "version": "0.1",
 
     "homepage_url": "http://sintetic.github.io/zerosteam/",
 
     "icons": {
-        "16": "16x16.png",
-        "32": "32x32.png",
-        "48": "48x48.png",
         "128": "128x128.png"
     },
 
@@ -75,16 +72,10 @@
         "http://steambuy.com/*"
     ],
 
-    "browser_action": {
-        "default_title": "Открыть уведомления",
-        "default_icon": "48x48.png",
-        "default_popup": "/html/popup.html"
-    },
-
     "options_page": "/html/options.html",
 
     "background": {
-        "page": "/html/background.html"
+        "scripts": ["/js/background.js"]
     }
 
 }
