@@ -25,7 +25,8 @@ app.constant('OPTIONS', {
     COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST: "COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST", // Убрать пункт "Посмотреть профиль" из выпадающего меню
     COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT: "COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT", // Убрать пункт "О Steam" из глобального меню
     COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT: "COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT", // Убрать пункт "Поддержка" из глобального меню
-    MAIN_PAGE_HEADER_FLOAT_LEFT: "MAIN_PAGE_HEADER_FLOAT_LEFT", // Выровнять блок по левому краю
+    MAIN_PAGE_HEADER_FLOAT_RIGHT: "MAIN_PAGE_HEADER_FLOAT_RIGHT", // Выровнять блок по левому краю
+    MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT", // Выровнять блок по правому краю
     MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK: "MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK", // Убрать блок "Просмотр по жанру"
     APP_PAGE_MAKE_REVIEW_BLOCK_HIDE: "APP_PAGE_MAKE_REVIEW_BLOCK_HIDE" // Убрать блок "Написать обзор"
 });
@@ -38,7 +39,8 @@ app.constant('SCREENSHOTS', {
 });
 
 app.constant('DEMONSTRATIONS', {
-    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_float_right.png"
+    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_float_right.png",
+    MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "../img/demonstration/main_page_global_menu_float_right.png"
 });
 
 app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTES) {
@@ -117,8 +119,9 @@ app.controller("CommonSteamPageController", function ($scope) {
 });
 
 app.controller("MainSteamPageController", function ($scope) {
-    $scope.initModelItem($scope.options.MAIN_PAGE_HEADER_FLOAT_LEFT, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_HEADER_FLOAT_RIGHT, $scope);
     $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT, $scope);
 });
 
 app.controller("SteamAppPageController", function ($scope) {

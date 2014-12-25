@@ -1,10 +1,23 @@
 chrome.extension.sendRequest({
     method: "getLocalStorage",
-    key: "MAIN_PAGE_HEADER_FLOAT_LEFT"
+    key: "MAIN_PAGE_HEADER_FLOAT_RIGHT"
 }, function (response) {
     if (response.data == 'true') {
         jQuery('#global_actions').css({
             'right': '-93px'
+        });
+    }
+});
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT"
+}, function (response) {
+    if (response.data == 'true') {
+        jQuery('.logo').css({
+            'margin-left': '93px'
+        });
+        jQuery('#supernav').css({
+            'left': '275px'
         });
     }
 });

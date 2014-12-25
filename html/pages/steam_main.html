@@ -9,9 +9,9 @@
         </div>
 
         <div class="extension-card-checkbox-with-screenshot">
-            <md-checkbox ng-init="floatLeft = options.MAIN_PAGE_HEADER_FLOAT_LEFT"
-                         ng-model="data[floatLeft]"
-                         ng-checked="setToLocalStorage(floatLeft)">
+            <md-checkbox ng-init="headerFloatRight = options.MAIN_PAGE_HEADER_FLOAT_RIGHT"
+                         ng-model="data[headerFloatRight]"
+                         ng-checked="setToLocalStorage(headerFloatRight)">
                 Выровнять блок по левому краю
             </md-checkbox>
 
@@ -20,6 +20,28 @@
             </md-button>
         </div>
 
+    </md-card>
+
+    <md-card style="background-color: white">
+
+        <div class="extension-card-title">
+            <h2>Глобальное меню</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.COMMON_PAGE_GLOBAL_MENU)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="globalMenuFloatRight = options.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT"
+                         ng-model="data[globalMenuFloatRight]"
+                         ng-checked="setToLocalStorage(globalMenuFloatRight)">
+                Выровнять блок по правому краю
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT)">
+                Демонстрация
+            </md-button>
+        </div>
     </md-card>
 
     <md-card style="background-color: white">
