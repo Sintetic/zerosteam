@@ -1,0 +1,15 @@
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
+            <h2>Блок "Написать обзор"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_MAKE_REVIEW_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="hideReviewBlock = options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE"
+                     ng-model="data[hideReviewBlock]"
+                     ng-checked="setToLocalStorage(hideReviewBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>

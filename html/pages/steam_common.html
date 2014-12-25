@@ -1,0 +1,27 @@
+<div ng-controller="CommonSteamPageController">
+    <md-card style="background-color: white">
+
+        <div class="extension-card-title">
+            <h2>Правый верхний блок страницы</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_HEADER_RIGHT_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="hideButtonDownload = options.COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD"
+                     ng-model="data[hideButtonDownload]"
+                     ng-checked="setToLocalStorage(hideButtonDownload)">
+            Скрыть кнопку «Установить Steam»
+        </md-checkbox>
+        <md-checkbox ng-init="floatLeft = options.COMMON_PAGE_HEADER_FLOAT_LEFT"
+                     ng-model="data[floatLeft]"
+                     ng-checked="setToLocalStorage(floatLeft)">
+            Выровнять блок по левому краю
+        </md-checkbox>
+        <md-checkbox ng-init="viewProfile = options.COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST"
+                     ng-model="data[viewProfile]"
+                     ng-checked="setToLocalStorage(viewProfile)">
+            Убрать пункт "Посмотреть профиль" из выпадающего меню
+        </md-checkbox>
+    </md-card>
+</div>

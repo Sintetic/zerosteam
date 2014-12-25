@@ -1,0 +1,95 @@
+/* todo https://material.angularjs.org/#/Theming/03_configuring_a_theme */
+.md-toolbar-common-extension-theme {
+    background-color: #528094;
+    color: white;
+}
+
+.wrapper {
+    overflow: hidden;
+    height: 100%;
+}
+
+.extension-section {
+    height: 100%;
+}
+
+.extension-menu-sidenav {
+    overflow: hidden;
+    display: flex;
+    height: 100%
+}
+
+.extension-card {
+    background-color: #ffffff;
+}
+
+.extension-card-title {
+    overflow: hidden;
+}
+
+.extension-card-title h2 {
+    float: left;
+    margin-left: 13px;
+}
+
+.extension-card-title button {
+    margin-top: 15px;
+    margin-left: 6px;
+    color: #0000FF;
+}
+
+.extension-todo {
+    font-size: 45px;
+    margin-top: 300px;
+}
+
+/* стили взяты из демо Angular Material */
+.menu-item {
+    background: none;
+    border-width: 0;
+    cursor: pointer;
+    display: block;
+    color: #000;
+    font-size: inherit;
+    line-height: 40px;
+    max-height: 40px;
+    opacity: 1;
+    margin: 0;
+    outline: none;
+    padding: 0px 28px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+    z-index: 1;
+    transition: 0.45s cubic-bezier(0.35, 0, 0.25, 1);
+    transition-property: max-height, background-color, opacity;
+}
+
+.menu-item.ng-hide {
+    max-height: 0;
+    opacity: 0;
+}
+
+.menu-item:hover {
+    background-color: #f2f2f2;
+}
+
+/* именуется с большой буквы из-за ошибок, возникающих при каноничном наименовании */
+.menuItemSelected {
+    background-color: #e7e7e7;
+}
+
+.menu-item.menu-title {
+    color: #888;
+    font-size: 14px;
+    padding-left: 16px;
+    text-align: left;
+    text-transform: uppercase;
+    transition: color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.menu-item.menu-title:hover,
+.menu-item.menu-title.active {
+    color: #1976d2;
+}
