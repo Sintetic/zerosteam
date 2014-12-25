@@ -1,6 +1,38 @@
 <div ng-controller="SteamAppPageController">
     <md-card class="extension-card">
         <div class="extension-card-title">
+            <h2>Блок "Метки"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_SHARE_AND_ABUSE_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="hideShareAndAbuseBlock = options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE"
+                     ng-model="data[hideShareAndAbuseBlock]"
+                     ng-checked="setToLocalStorage(hideShareAndAbuseBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
+            <h2>Блок "Поделиться, HTML-код, Пожаловаться"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_SHARE_AND_ABUSE_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="hideShareAndAbuseBlock = options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE"
+                     ng-model="data[hideShareAndAbuseBlock]"
+                     ng-checked="setToLocalStorage(hideShareAndAbuseBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
             <h2>Блок "Написать обзор"</h2>
             <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_MAKE_REVIEW_BLOCK)">
                 Скриншот
