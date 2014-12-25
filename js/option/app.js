@@ -28,6 +28,7 @@ app.constant('OPTIONS', {
     MAIN_PAGE_HEADER_FLOAT_RIGHT: "MAIN_PAGE_HEADER_FLOAT_RIGHT",
     MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT",
     MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK: "MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK",
+    APP_PAGE_MARK_BLOCK_HIDE: "APP_PAGE_MARK_BLOCK_HIDE",
     APP_PAGE_MAKE_REVIEW_BLOCK_HIDE: "APP_PAGE_MAKE_REVIEW_BLOCK_HIDE",
     APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE: "APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE"
 });
@@ -36,8 +37,9 @@ app.constant('SCREENSHOTS', {
     COMMON_PAGE_GLOBAL_MENU: "../img/screenshot/global_menu.png",
     MAIN_PAGE_HEADER_RIGHT_BLOCK: "../img/screenshot/main_page_header_right_block.png",
     MAIN_PAGE_BROWSE_BY_GENRE_BLOCK: "../img/screenshot/browse_by_genre_block.png",
+    APP_PAGE_MARK_BLOCK: "../img/screenshot/app_page_mark_block.png",
     APP_PAGE_MAKE_REVIEW_BLOCK: "../img/screenshot/app_page_make_review_block.png",
-    APP_PAGE_SHARE_AND_ABUSE_BLOCK: "../img/screenshot/share_and_abuse_block.png"
+    APP_PAGE_SHARE_AND_ABUSE_BLOCK: "../img/screenshot/app_page_share_and_abuse_block.png"
 });
 
 app.constant('DEMONSTRATIONS', {
@@ -129,4 +131,5 @@ app.controller("MainSteamPageController", function ($scope) {
 app.controller("SteamAppPageController", function ($scope) {
     $scope.initModelItem($scope.options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE, $scope);
     $scope.initModelItem($scope.options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE, $scope);
+    $scope.initModelItem($scope.options.APP_PAGE_MARK_BLOCK_HIDE, $scope);
 });
