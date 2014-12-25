@@ -46,7 +46,7 @@ app.constant('SCREENSHOTS', {
 });
 
 app.constant('DEMONSTRATIONS', {
-    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_float_right.png",
+    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_block_float_right.png",
     MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "../img/demonstration/main_page_global_menu_float_right.png"
 });
 
