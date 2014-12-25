@@ -1,1 +1,40 @@
-<div class="extension-todo">В разработке</div>
+<div ng-controller="MainSteamPageController">
+    <md-card style="background-color: white">
+
+        <div class="extension-card-title">
+            <h2>Правый верхний блок страницы</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_HEADER_RIGHT_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="floatLeft = options.MAIN_PAGE_HEADER_FLOAT_LEFT"
+                         ng-model="data[floatLeft]"
+                         ng-checked="setToLocalStorage(floatLeft)">
+                Выровнять блок по левому краю
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.MAIN_PAGE_HEADER_FLOAT_RIGHT)">
+                Демонстрация
+            </md-button>
+        </div>
+
+    </md-card>
+
+    <md-card style="background-color: white">
+
+        <div class="extension-card-title">
+            <h2>Блок "Просмотр по жанру"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_BROWSE_BY_GENRE_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="browseByGenre = options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK"
+                     ng-model="data[browseByGenre]"
+                     ng-checked="setToLocalStorage(browseByGenre)">
+            Скрывать
+        </md-checkbox>
+
+    </md-card>
+</div>

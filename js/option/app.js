@@ -22,14 +22,23 @@ app.constant('ROUTES', {
 
 app.constant('OPTIONS', {
     COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD: "COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD", // Скрыть кнопку «Установить Steam»
-    COMMON_PAGE_HEADER_FLOAT_LEFT: "COMMON_PAGE_HEADER_FLOAT_LEFT", // Выровнять блок по левому краю
     COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST: "COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST", // Убрать пункт "Посмотреть профиль" из выпадающего меню
+    COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT: "COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT", // Убрать пункт "О Steam" из глобального меню
+    COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT: "COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT", // Убрать пункт "Поддержка" из глобального меню
+    MAIN_PAGE_HEADER_FLOAT_LEFT: "MAIN_PAGE_HEADER_FLOAT_LEFT", // Выровнять блок по левому краю
+    MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK: "MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK", // Убрать блок "Просмотр по жанру"
     APP_PAGE_MAKE_REVIEW_BLOCK_HIDE: "APP_PAGE_MAKE_REVIEW_BLOCK_HIDE" // Убрать блок "Написать обзор"
 });
 
 app.constant('SCREENSHOTS', {
+    COMMON_PAGE_GLOBAL_MENU: "../img/screenshot/global_menu.png",
     MAIN_PAGE_HEADER_RIGHT_BLOCK: "../img/screenshot/main_page_header_right_block.png",
+    MAIN_PAGE_BROWSE_BY_GENRE_BLOCK: "../img/screenshot/browse_by_genre_block.png",
     APP_PAGE_MAKE_REVIEW_BLOCK: "../img/screenshot/app_page_make_review_block.png"
+});
+
+app.constant('DEMONSTRATIONS', {
+    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_float_right.png"
 });
 
 app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTES) {
@@ -62,7 +71,7 @@ app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTE
     });
 });
 
-app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUTES, OPTIONS, SCREENSHOTS) {
+app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUTES, OPTIONS, SCREENSHOTS, DEMONSTRATIONS) {
     $scope.items = menuCommonItemList;
     $scope.getURL = function (url) {
         return '/html/setting.html#' + ROUTES[url];
@@ -78,6 +87,7 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
     $rootScope.options = OPTIONS;
     $rootScope.image = "";
     $rootScope.screenshots = SCREENSHOTS;
+    $rootScope.demonstrations = DEMONSTRATIONS;
     $rootScope.setToLocalStorage = function (name) {
         localStorage[name] = $rootScope.data[name];
     };
@@ -101,8 +111,14 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
 
 app.controller("CommonSteamPageController", function ($scope) {
     $scope.initModelItem($scope.options.COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_HEADER_FLOAT_LEFT, $scope);
     $scope.initModelItem($scope.options.COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST, $scope);
+    $scope.initModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT, $scope);
+    $scope.initModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT, $scope);
+});
+
+app.controller("MainSteamPageController", function ($scope) {
+    $scope.initModelItem($scope.options.MAIN_PAGE_HEADER_FLOAT_LEFT, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK, $scope);
 });
 
 app.controller("SteamAppPageController", function ($scope) {

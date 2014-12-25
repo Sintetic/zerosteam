@@ -38,6 +38,19 @@
     color: #0000FF;
 }
 
+.extension-card-checkbox-with-screenshot {
+    overflow: hidden;
+}
+
+.extension-card-checkbox-with-screenshot md-checkbox {
+    float: left;
+}
+
+.extension-card-checkbox-with-screenshot button {
+    float: right;
+    margin-top: 16px;
+}
+
 .extension-todo {
     font-size: 45px;
     margin-top: 300px;

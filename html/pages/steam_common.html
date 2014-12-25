@@ -13,15 +13,31 @@
                      ng-checked="setToLocalStorage(hideButtonDownload)">
             Скрыть кнопку «Установить Steam»
         </md-checkbox>
-        <md-checkbox ng-init="floatLeft = options.COMMON_PAGE_HEADER_FLOAT_LEFT"
-                     ng-model="data[floatLeft]"
-                     ng-checked="setToLocalStorage(floatLeft)">
-            Выровнять блок по левому краю
-        </md-checkbox>
         <md-checkbox ng-init="viewProfile = options.COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST"
                      ng-model="data[viewProfile]"
                      ng-checked="setToLocalStorage(viewProfile)">
             Убрать пункт "Посмотреть профиль" из выпадающего меню
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+
+        <div class="extension-card-title">
+            <h2>Глобальное меню</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.COMMON_PAGE_GLOBAL_MENU)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="hideAbout = options.COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT"
+                     ng-model="data[hideAbout]"
+                     ng-checked="setToLocalStorage(hideAbout)">
+            Убрать пункт «О Steam»
+        </md-checkbox>
+        <md-checkbox ng-init="hideSupport = options.COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT"
+                     ng-model="data[hideSupport]"
+                     ng-checked="setToLocalStorage(hideSupport)">
+            Убрать пункт "Поддержка"
         </md-checkbox>
     </md-card>
 </div>
