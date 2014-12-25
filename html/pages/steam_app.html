@@ -1,6 +1,19 @@
 <div ng-controller="SteamAppPageController">
     <md-card class="extension-card">
         <div class="extension-card-title">
+            <h2>Настройки, относящиеся ко всей странице</h2>
+        </div>
+        <md-checkbox ng-init="blocksExpand = options.APP_PAGE_BLOCKS_EXPAND"
+                     ng-model="data[blocksExpand]"
+                     ng-checked="setToLocalStorage(blocksExpand)">
+            Раскрыть все блоки, содержащие "Читать далее"
+        </md-checkbox>
+    </md-card>
+</div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
             <h2>Блок "Метки"</h2>
             <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_MARK_BLOCK)">
                 Скриншот
@@ -41,6 +54,22 @@
         <md-checkbox ng-init="hideReviewBlock = options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE"
                      ng-model="data[hideReviewBlock]"
                      ng-checked="setToLocalStorage(hideReviewBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
+            <h2>Блок "Рекомендовано кураторами"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_CURATORS_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="curatorsBlock = options.APP_PAGE_CURATORS_BLOCK_HIDE"
+                     ng-model="data[curatorsBlock]"
+                     ng-checked="setToLocalStorage(curatorsBlock)">
             Убрать блок
         </md-checkbox>
     </md-card>
