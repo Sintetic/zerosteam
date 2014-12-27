@@ -72,7 +72,7 @@
         "http://steambuy.com/*"
     ],
 
-    "options_page": "/html/setting.html",
+    "options_page": "/html/options.html",
 
     "background": {
         "scripts": ["/js/background.js"]

@@ -1,57 +1,49 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>ZeroSteam Settings</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript" src="../js/lib/jquery.js"></script>
-    <link rel="stylesheet" href="options.css" type="text/css">
+    <title>ZeroSteam</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/angular-material.min.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
-<body>
+<body ng-app="ZeroSteam">
 
-<div id=global_header>
-    <div id="temp">
-        <div id="centered">
-            <img id="temp1" alt=""
-                 src="../img/logo.png"/>
-        </div>
-    </div>
+<div ng-controller="CommonController" class="wrapper">
+    <section class="extension-section" layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 extension-menu-sidenav"
+                    md-component-id="left" md-is-locked-open="$media('gt-sm')">
+            <md-content flex="" style="overflow: auto;">
+                <div ng-repeat="item in items">
+                    <!--todo md-divider -->
+                    <a class="menu-item menu-sub-item md-menu-item" md-ink-ripple="#bbb"
+                       ng-href="{{getURL(item.url)}}"
+                       ng-click="setSelected(item.id)" ng-class="{menuItemSelected: item.id === idSelectedItem}">
+                        <span>{{item.title}}</span><br/>
+                        <!--todo подпись под элементом -->
+                    </a>
+                </div>
+            </md-content>
+        </md-sidenav>
+        <md-content flex class="md-padding" style="background-color: #f2f2f2">
+            <div layout="column" layout-fill layout-align="center center">
+                <md-content style="width: 80%; background-color: transparent">
+                    <!-- с помощью магии ui-route сюда вставляется необходимый контент -->
+                    <div ui-view></div>
+                </md-content>
+            </div>
+        </md-content>
+    </section>
 </div>
-<fieldset>
-    Главная страница магазина<br>
-    <hr>
-    <input type="checkbox" id="mainStorePageShowHeaderButtonDownload" title=""/>Скрыть верхнюю кнопку
-    «Установить Steam»<br>
-    <input type="checkbox" id="mainStorePageShowRealItemStoreBlock" title=""/>Скрыть блок «Магазин
-    Valve»<br>
-    <input type="checkbox" id="mainStorePageShowRSSAndOtherBlock" title=""/>Скрыть блок «Следите за
-    новостями»<br>
-    <input type="checkbox" id="mainStorePageShowGiftBlock" title=""/>Скрыть блок «Подарки в магазине
-    Steam»<br>
-    <input type="checkbox" id="mainStorePageShowVKItemInRSSAndOtherBlock" title=""/>Добавить ссылку на
-    группу
-    в VK в блок «Следите за новостями»<br>
-</fieldset>
-<fieldset>
-    Страница приложения<br>
-    <hr>
-    <input type="checkbox" id="appPageTryGetPriceFromSteamBuyCheckbox"
-           title="Пытаться получить цену со SteamBuy"/>Пытаться получить цену со SteamBuy<br>
-</fieldset>
-<fieldset>
-    Прочее<br>
-    <hr>
-    <input type="checkbox" id="badgesPageCheckbox" title="Показывать количество невыпавших карт"/>Показывать
-    количество невыпавших карт<br>
-    <input type="checkbox" id="guidesPageCheckbox" title="Открывать руководства в новой вкладке"/>Открывать
-    руководства в новой вкладке<br>
-    <input type="checkbox" id="mainGameCardsCheckbox" title="Подробности о значках"/>Показывать ссылку
-    на
-    подробности о значке<br>
-    <input type="checkbox" id="showAllLanguageOnAppPage" title="Языки"/>Показывать все доступные
-    языки<br>
-</fieldset>
-<div id="status"></div>
-<div id="current_value"></div>
-<button id="save">Сохранить</button>
-<script type="text/javascript" src="../js/option/options.js"></script>
+
+<script src="../js/lib/angular/angular.min.js"></script>
+<script src="../js/lib/angular-aria/angular-aria.min.js"></script>
+<script src="../js/lib/angular-animate/angular-animate.min.js"></script>
+<script src="../js/lib/hammerjs/hammer.min.js"></script>
+<script src="../js/lib/angular-material/angular-material.min.js"></script>
+<script src="../js/lib/angular-ui-router/angular-ui-router.min.js"></script>
+<script src="../js/option/app.js"></script> <!--todo переименовать -->
+<script src="../js/option/arrays.js"></script>
+
 </body>
 </html>

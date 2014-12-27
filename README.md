@@ -1,4 +1,4 @@
-zerosteam
+ZeroSteam
 =========
 
-Chrome extensions for steam
+Chrome extensions for Steam

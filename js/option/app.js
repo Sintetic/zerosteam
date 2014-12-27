@@ -112,7 +112,7 @@ app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTE
 app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUTES, OPTIONS, SCREENSHOTS, DEMONSTRATIONS) {
     $scope.items = menuCommonItemList;
     $scope.getURL = function (url) {
-        return '/html/setting.html#' + ROUTES[url];
+        return '/html/options.html#' + ROUTES[url];
     };
 
     $scope.idSelectedItem = null;
