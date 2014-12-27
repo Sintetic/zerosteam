@@ -14,7 +14,7 @@
     "content_scripts": [
         {
             "matches": [ "*://steamcommunity.com/id/*/badges/*" ],
-            "js": ["/js/lib/jquery.js", "js/content/content_all_badges.js" ],
+            "js": ["/js/lib/jquery.js", "js/content/content_badges.js" ],
             "run_at": "document_end"
         },
         {

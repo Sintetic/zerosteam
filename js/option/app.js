@@ -19,6 +19,12 @@ app.constant('ROUTES', {
     STEAM_PROFILE_PAGE_URL: "/steam/profile",
     STEAM_PROFILE_PAGE_TEMPLATE: "../html/pages/steam_profile.html",
 
+    STEAM_BADGES_PAGE_URL: "/steam/badges",
+    STEAM_BADGES_PAGE_TEMPLATE: "../html/pages/steam_badges.html",
+
+    STEAM_BADGE_PAGE_URL: "/steam/badge",
+    STEAM_BADGE_PAGE_TEMPLATE: "../html/pages/steam_badge.html",
+
     EXTENSION_ABOUT_PAGE_URL: "/steam/about",
     EXTENSION_ABOUT_PAGE_TEMPLATE: "../html/pages/extension-about.html"
 });
@@ -46,7 +52,13 @@ app.constant('OPTIONS', {
     ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE: "ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE",
     ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW",
     ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW",
-    ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW"
+    ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW",
+    BADGES_PAGE_REMAINING_DROP_LABEL_SHOW: "BADGES_PAGE_REMAINING_DROP_LABEL_SHOW",
+    BADGES_PAGE_HEADER_SUPPORT_HIDE: "BADGES_PAGE_HEADER_SUPPORT_HIDE",
+    BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE",
+    BADGES_PAGE_PLAY_BUTTON_HIDE: "BADGES_PAGE_PLAY_BUTTON_HIDE",
+
+    UNKNOWN: ""
 });
 
 app.constant('SCREENSHOTS', {
@@ -61,7 +73,9 @@ app.constant('SCREENSHOTS', {
     ACCOUNT_PAGE_FAMILY_SHARING_BLOCK: "../img/screenshot/account_page_family_sharing_block.png",
     ACCOUNT_PAGE_TAXES_BLOCK: "../img/screenshot/account_page_taxes_block.png",
     ACCOUNT_PAGE_EMAIL_BLOCK: "../img/screenshot/account_page_email_block.png",
-    ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK: "../img/screenshot/account_page_family_viewing_block.png"
+    ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK: "../img/screenshot/account_page_family_viewing_block.png",
+    BADGES_PAGE_HEADER: "../img/screenshot/badges_page_header.png",
+    UNKNOWN: ""
 });
 
 app.constant('DEMONSTRATIONS', {
@@ -71,7 +85,11 @@ app.constant('DEMONSTRATIONS', {
     ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_store_statistic_block_show.png",
     ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_in_game_statistic_block_show.png",
     ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_community_market_statistic_block_show.png",
-    COMMON_PAGE_FOOTER_LOGO_FIX: "../img/demonstration/common_page_footer_logo_fix.png"
+    COMMON_PAGE_FOOTER_LOGO_FIX: "../img/demonstration/common_page_footer_logo_fix.png",
+    BADGES_PAGE_REMAINING_DROP_LABEL_SHOW: "../img/demonstration/badges_page_remaining_drop_label_show.png",
+    BADGES_PAGE_HEADER_SUPPORT_HIDE: "../img/demonstration/badges_page_header_support_hide.png",
+
+    UNKNOWN: ""
 });
 
 app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTES) {
@@ -101,6 +119,16 @@ app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTE
     $stateProvider.state(ROUTES.STEAM_PROFILE_PAGE_URL, {
         url: ROUTES.STEAM_PROFILE_PAGE_URL,
         templateUrl: ROUTES.STEAM_PROFILE_PAGE_TEMPLATE
+    });
+    /*Страница со списком всех значков*/
+    $stateProvider.state(ROUTES.STEAM_BADGES_PAGE_URL, {
+        url: ROUTES.STEAM_BADGES_PAGE_URL,
+        templateUrl: ROUTES.STEAM_BADGES_PAGE_TEMPLATE
+    });
+    /*Страница значка*/
+    $stateProvider.state(ROUTES.STEAM_BADGE_PAGE_URL, {
+        url: ROUTES.STEAM_BADGE_PAGE_URL,
+        templateUrl: ROUTES.STEAM_BADGE_PAGE_TEMPLATE
     });
     /*Страница с информацией о расширении*/
     $stateProvider.state(ROUTES.EXTENSION_ABOUT_PAGE_URL, {
@@ -180,4 +208,15 @@ app.controller("SteamAccountPageController", function ($scope) {
     $scope.initModelItem($scope.options.ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW, $scope);
     $scope.initModelItem($scope.options.ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW, $scope);
     $scope.initModelItem($scope.options.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW, $scope);
+});
+
+app.controller("SteamBadgesPageController", function ($scope) {
+    $scope.initModelItem($scope.options.BADGES_PAGE_REMAINING_DROP_LABEL_SHOW, $scope);
+    $scope.initModelItem($scope.options.BADGES_PAGE_HEADER_SUPPORT_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGES_PAGE_PLAY_BUTTON_HIDE, $scope);
+});
+
+app.controller("SteamBadgePageController", function ($scope) {
+    //$scope.initModelItem($scope.options.ACCOUNT_PAGE_FIX_FOOTER, $scope);
 });

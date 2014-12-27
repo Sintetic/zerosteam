@@ -27,6 +27,16 @@ var menuCommonItemList = [
         url: 'STEAM_PROFILE_PAGE_URL'
     },
     {
+        id: 'steam-pages#badges',
+        title: 'Страница списка значков',
+        url: 'STEAM_BADGES_PAGE_URL'
+    },
+    {
+        id: 'steam-pages#badge',
+        title: 'Страница одного значка',
+        url: 'STEAM_BADGE_PAGE_URL'
+    },
+    {
         id: 'extension-pages#about',
         title: 'О расширении',
         url: 'EXTENSION_ABOUT_PAGE_URL'

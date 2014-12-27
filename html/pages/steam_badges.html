@@ -1,0 +1,49 @@
+<div ng-controller="SteamBadgesPageController">
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Шапка списка значков</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.BADGES_PAGE_HEADER)">
+                Скриншот
+            </md-button>
+        </div>
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="remainingDropLabelShow = options.BADGES_PAGE_REMAINING_DROP_LABEL_SHOW"
+                         ng-model="data[remainingDropLabelShow]"
+                         ng-checked="setToLocalStorage(remainingDropLabelShow)">
+                Отображать количество невыпавших карточек
+            </md-checkbox>
+            <md-button ng-click="showScreenshot($event, demonstrations.BADGES_PAGE_REMAINING_DROP_LABEL_SHOW)">
+                Демонстрация
+            </md-button>
+        </div>
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="headerSupportHide = options.BADGES_PAGE_HEADER_SUPPORT_HIDE"
+                         ng-model="data[headerSupportHide]"
+                         ng-checked="setToLocalStorage(headerSupportHide)">
+                Скрыть справочную информацию
+            </md-checkbox>
+            <md-button ng-click="showScreenshot($event, demonstrations.BADGES_PAGE_HEADER_SUPPORT_HIDE)">
+                Демонстрация
+            </md-button>
+        </div>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Список значков</h2>
+        </div>
+
+        <md-checkbox ng-init="howGetMoreButtonHide = options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE"
+                     ng-model="data[howGetMoreButtonHide]"
+                     ng-checked="setToLocalStorage(howGetMoreButtonHide)">
+            Скрыть кнопку "Как получить больше карточек?"
+        </md-checkbox>
+
+        <md-checkbox ng-init="playButtonHide = options.BADGES_PAGE_PLAY_BUTTON_HIDE"
+                     ng-model="data[playButtonHide]"
+                     ng-checked="setToLocalStorage(playButtonHide)">
+            Скрыть кнопку "Играть"
+        </md-checkbox>
+
+    </md-card>
+</div>
