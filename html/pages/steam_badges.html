@@ -30,7 +30,10 @@
 
     <md-card style="background-color: white">
         <div class="extension-card-title">
-            <h2>Список значков</h2>
+            <h2>Элемент списка значков</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.BADGES_PAGE_LIST_ITEM)">
+                Скриншот
+            </md-button>
         </div>
 
         <md-checkbox ng-init="howGetMoreButtonHide = options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE"
@@ -43,6 +46,12 @@
                      ng-model="data[playButtonHide]"
                      ng-checked="setToLocalStorage(playButtonHide)">
             Скрыть кнопку "Играть"
+        </md-checkbox>
+
+        <md-checkbox ng-init="hoursInGameLabelHide = options.BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE"
+                     ng-model="data[hoursInGameLabelHide]"
+                     ng-checked="setToLocalStorage(hoursInGameLabelHide)">
+            Скрыть количество часов, проведённых в игре
         </md-checkbox>
 
     </md-card>

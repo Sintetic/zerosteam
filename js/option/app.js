@@ -57,6 +57,7 @@ app.constant('OPTIONS', {
     BADGES_PAGE_HEADER_SUPPORT_HIDE: "BADGES_PAGE_HEADER_SUPPORT_HIDE",
     BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE",
     BADGES_PAGE_PLAY_BUTTON_HIDE: "BADGES_PAGE_PLAY_BUTTON_HIDE",
+    BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE: "BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE",
 
     UNKNOWN: ""
 });
@@ -75,6 +76,8 @@ app.constant('SCREENSHOTS', {
     ACCOUNT_PAGE_EMAIL_BLOCK: "../img/screenshot/account_page_email_block.png",
     ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK: "../img/screenshot/account_page_family_viewing_block.png",
     BADGES_PAGE_HEADER: "../img/screenshot/badges_page_header.png",
+    BADGES_PAGE_LIST_ITEM: "../img/screenshot/badges_page_list_item.png",
+
     UNKNOWN: ""
 });
 
@@ -215,6 +218,7 @@ app.controller("SteamBadgesPageController", function ($scope) {
     $scope.initModelItem($scope.options.BADGES_PAGE_HEADER_SUPPORT_HIDE, $scope);
     $scope.initModelItem($scope.options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
     $scope.initModelItem($scope.options.BADGES_PAGE_PLAY_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
 });
 
 app.controller("SteamBadgePageController", function ($scope) {

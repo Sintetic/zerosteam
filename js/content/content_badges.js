@@ -30,6 +30,7 @@ chrome.extension.sendRequest({
 }, function (response) {
     if (response.data == 'true') {
         jQuery('.whiteLink.how_to_get_card_drops').remove();
+        jQuery('.card_drop_info_dialog').remove();
     }
 });
 
@@ -39,5 +40,16 @@ chrome.extension.sendRequest({
 }, function (response) {
     if (response.data == 'true') {
         jQuery('.badge_title_playgame').remove();
+    }
+});
+
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE"
+}, function (response) {
+    if (response.data == 'true') {
+        jQuery('.badge_title_stats').css({
+            'color': 'transparent'
+        });
     }
 });
