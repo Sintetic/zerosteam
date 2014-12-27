@@ -51,7 +51,7 @@ app.constant('OPTIONS', {
 
 app.constant('SCREENSHOTS', {
     COMMON_PAGE_GLOBAL_MENU: "../img/screenshot/common_page_global_menu.png",
-    COMMON_PAGE_STORE_FOOTER: "../img/screenshot/common_page_store_footer.png",
+    COMMON_PAGE_STORE_FOOTER: "../img/screenshot/common_page_store_footer_block.png",
     MAIN_PAGE_HEADER_RIGHT_BLOCK: "../img/screenshot/common_page_header_right_block.png",
     MAIN_PAGE_BROWSE_BY_GENRE_BLOCK: "../img/screenshot/browse_by_genre_block.png",
     APP_PAGE_MARK_BLOCK: "../img/screenshot/app_page_mark_block.png",
