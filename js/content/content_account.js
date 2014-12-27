@@ -6,7 +6,6 @@ chrome.extension.sendRequest({
         jQuery('#footer_spacer').css({
             'margin-top': '25px'
         });
-        console.log('fixed');
     }
 });
 
@@ -57,7 +56,7 @@ chrome.extension.sendRequest({
     key: "ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW"
 }, function (response) {
     if (response.data == 'true') {
-        if (location.href.indexOf('store_transactions')!=-1) {
+        if (location.href.indexOf('store_transactions') != -1) {
             createStoreTransactionStatistic();
         }
     }
@@ -68,7 +67,7 @@ chrome.extension.sendRequest({
     key: "ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW"
 }, function (response) {
     if (response.data == 'true') {
-        if (location.href.indexOf('ingame_transactions')!=-1) {
+        if (location.href.indexOf('ingame_transactions') != -1) {
             createStoreInGameTransactionStatistic();
         }
     }
@@ -79,7 +78,7 @@ chrome.extension.sendRequest({
     key: "ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW"
 }, function (response) {
     if (response.data == 'true') {
-        if (location.href.indexOf('market_transactions')!=-1) {
+        if (location.href.indexOf('market_transactions') != -1) {
             createStoreCommunityMarketTransactionStatistic();
         }
     }
