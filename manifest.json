@@ -13,47 +13,47 @@
 
     "content_scripts": [
         {
-            "matches": [ "http://steamcommunity.com/id/*/badges/*" ],
+            "matches": [ "*://steamcommunity.com/id/*/badges/*" ],
             "js": ["/js/lib/jquery.js", "js/content/content_all_badges.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://steamcommunity.com/app/*/guides*" ],
+            "matches": [ "*://steamcommunity.com/app/*/guides*" ],
             "js": ["/js/lib/jquery.js", "js/content/content_guides.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "https://store.steampowered.com/account/" ],
-            "js": ["/js/lib/jquery.js", "js/content/content_prices.js" ],
+            "matches": [ "*://store.steampowered.com/account/*" ],
+            "js": ["/js/lib/jquery.js", "/js/engine/store_statistic_engine.js", "js/content/content_account.js"],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://store.steampowered.com/" ],
+            "matches": [ "*://store.steampowered.com/" ],
             "js": ["/js/lib/jquery.js", "js/content/content_store_main_page.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://store.steampowered.com/*"],
+            "matches": [ "*://store.steampowered.com/*" ],
             "js": ["/js/lib/jquery.js", "js/content/content_all_pages.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://steamcommunity.com/*"],
+            "matches": [ "*://steamcommunity.com/*" ],
             "js": ["/js/lib/jquery.js", "js/content/content_all_pages.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://steamcommunity.com/id/*/gamecards/*/*"],
+            "matches": [ "*://steamcommunity.com/id/*/gamecards/*/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_game_badges.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://steamcommunity.com/id/*/gamecards/*"],
+            "matches": [ "*://steamcommunity.com/id/*/gamecards/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_game_badges.js" ],
             "run_at": "document_end"
         },
         {
-            "matches": [ "http://store.steampowered.com/app/*"],
+            "matches": [ "*://store.steampowered.com/app/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_app_page.js" ],
             "run_at": "document_end"
         }

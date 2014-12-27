@@ -40,4 +40,34 @@
             Убрать пункт "Поддержка"
         </md-checkbox>
     </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Футер (страницы магазина)</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.COMMON_PAGE_STORE_FOOTER)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="footerTopHide = options.COMMON_PAGE_STORE_FOOTER_TOP_HIDE"
+                     ng-model="data[footerTopHide]"
+                     ng-checked="setToLocalStorage(footerTopHide)">
+            Убрать меню, располагающееся над копирайтами
+        </md-checkbox>
+        <md-checkbox ng-init="footerBottomHide = options.COMMON_PAGE_STORE_FOOTER_BOTTOM_HIDE"
+                     ng-model="data[footerBottomHide]"
+                     ng-checked="setToLocalStorage(footerBottomHide)">
+            Убрать меню, располагающееся под копирайтами
+        </md-checkbox>
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="footerLogoFix = options.COMMON_PAGE_FOOTER_LOGO_FIX"
+                         ng-model="data[footerLogoFix]"
+                         ng-checked="setToLocalStorage(footerLogoFix)">
+                Поправить позиционирование логотипа Valve
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.COMMON_PAGE_FOOTER_LOGO_FIX)">
+                Демонстрация
+            </md-button>
+        </div>
+    </md-card>
 </div>

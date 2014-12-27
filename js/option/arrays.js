@@ -17,6 +17,11 @@ var menuCommonItemList = [
         url: 'STEAM_APP_PAGE_URL'
     },
     {
+        id: 'steam-pages#account',
+        title: 'Страница аккаунта',
+        url: 'STEAM_ACCOUNT_PAGE_URL'
+    },
+    {
         id: 'steam-pages#profile',
         title: 'Информация о профиле',
         url: 'STEAM_PROFILE_PAGE_URL'

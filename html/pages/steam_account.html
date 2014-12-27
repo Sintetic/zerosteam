@@ -1,0 +1,129 @@
+<div ng-controller="SteamAccountPageController">
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Общее</h2>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="fixFooter = options.ACCOUNT_PAGE_FIX_FOOTER"
+                         ng-model="data[fixFooter]"
+                         ng-checked="setToLocalStorage(fixFooter)">
+                Добавить небольшой отступ к футеру для исправление проблемы с "наезжанием" на него контента
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_FIX_FOOTER)">
+                Демонстрация
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init=""
+                     ng-disabled="true"
+                     ng-model=""
+                     ng-checked="">
+            Отображать скрытые блоки на странице "Лицензии и подписки" (TODO!)
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Управление Family Library Sharing"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.ACCOUNT_PAGE_FAMILY_SHARING_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="familySharingBlock = options.ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE"
+                     ng-model="data[familySharingBlock]"
+                     ng-checked="setToLocalStorage(familySharingBlock)">
+            Скрыть блок
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Информация о налогах"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.ACCOUNT_PAGE_TAXES_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="taxesBlock = options.ACCOUNT_PAGE_TAXES_BLOCK_HIDE"
+                     ng-model="data[taxesBlock]"
+                     ng-checked="setToLocalStorage(taxesBlock)">
+            Скрыть блок
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Настройки эл. почты"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.ACCOUNT_PAGE_EMAIL_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="emailBlock = options.ACCOUNT_PAGE_EMAIL_BLOCK_HIDE"
+                     ng-model="data[emailBlock]"
+                     ng-checked="setToLocalStorage(emailBlock)">
+            Скрыть блок
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Семейный просмотр"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="familyViewingBlock = options.ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE"
+                     ng-model="data[familyViewingBlock]"
+                     ng-checked="setToLocalStorage(familyViewingBlock)">
+            Скрыть блок
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Статистика"</h2>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="storeStatistic = options.ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW"
+                         ng-model="data[storeStatistic]"
+                         ng-checked="setToLocalStorage(storeStatistic)">
+                Добавить блок "Статистика" на страницу "Операции в магазине"
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW)">
+                Демонстрация
+            </md-button>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="inGameStatistic = options.ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW"
+                         ng-model="data[inGameStatistic]"
+                         ng-checked="setToLocalStorage(inGameStatistic)">
+                Добавить блок "Статистика" на страницу "Операции в игре"
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW)">
+                Демонстрация
+            </md-button>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="communityMarketStatistic = options.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW"
+                         ng-model="data[communityMarketStatistic]"
+                         ng-checked="setToLocalStorage(communityMarketStatistic)">
+                Добавить блок "Статистика" на страницу "Операции на торговой площадке"
+            </md-checkbox>
+
+            <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW)">
+                Демонстрация
+            </md-button>
+        </div>
+
+    </md-card>
+</div>

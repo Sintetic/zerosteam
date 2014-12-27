@@ -36,3 +36,45 @@ chrome.extension.sendRequest({
     }
 });
 
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "COMMON_PAGE_STORE_FOOTER_TOP_HIDE"
+}, function (response) {
+    if (response.data == 'true') {
+        var footerNav = jQuery('#footer_nav');
+        var footerNavRuleTop = footerNav.prev();
+        var footerNavBrBottom = footerNav.next();
+        var footerNavRuleBottom = footerNavBrBottom.next();
+
+        footerNavRuleTop.remove();
+        footerNav.remove();
+        footerNavBrBottom.remove();
+        footerNavRuleBottom.remove();
+    }
+});
+
+
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "COMMON_PAGE_STORE_FOOTER_BOTTOM_HIDE"
+}, function (response) {
+    if (response.data == 'true') {
+        var valveLinks = jQuery('.valve_links');
+        var valveLinksRuleTop = valveLinks.prev();
+
+        valveLinksRuleTop.remove();
+        valveLinks.remove();
+    }
+});
+
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "COMMON_PAGE_FOOTER_LOGO_FIX"
+}, function (response) {
+    if (response.data == 'true') {
+        jQuery('#footer_logo').css({
+            'margin-bottom': '3px',
+            'margin-left': '12px'
+        });
+    }
+});
