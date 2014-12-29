@@ -60,6 +60,14 @@ app.constant('OPTIONS', {
     BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE",
     BADGES_PAGE_PLAY_BUTTON_HIDE: "BADGES_PAGE_PLAY_BUTTON_HIDE",
     BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE: "BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE",
+    BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW: "BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW",
+    BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE: "BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE",
+    BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE",
+    BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE: "BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE",
+    BADGE_PAGE_PLAY_BUTTON_HIDE: "BADGE_PAGE_PLAY_BUTTON_HIDE",
+    BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE: "BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE",
+    BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE: "BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE",
+    BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE: "BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE",
 
     UNKNOWN: ""
 });
@@ -79,6 +87,8 @@ app.constant('SCREENSHOTS', {
     ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK: "../img/screenshot/account_page_family_viewing_block.png",
     BADGES_PAGE_HEADER: "../img/screenshot/badges_page_header.png",
     BADGES_PAGE_LIST_ITEM: "../img/screenshot/badges_page_list_item.png",
+    BADGE_PAGE_HEADER_BLOCK: "../img/screenshot/badge_page_header_block.png",
+    BADGE_PAGE_FRIENDS_WITH_THIS_BADGE: "../img/screenshot/badge_page_friends_with_this_badge.png",
 
     UNKNOWN: ""
 });
@@ -93,6 +103,8 @@ app.constant('DEMONSTRATIONS', {
     COMMON_PAGE_FOOTER_LOGO_FIX: "../img/demonstration/common_page_footer_logo_fix.png",
     BADGES_PAGE_REMAINING_DROP_LABEL_SHOW: "../img/demonstration/badges_page_remaining_drop_label_show.png",
     BADGES_PAGE_HEADER_SUPPORT_HIDE: "../img/demonstration/badges_page_header_support_hide.png",
+    BADGE_PAGE_HEADER_SUPPORT_HIDE: "../img/demonstration/badges_page_header_support_hide.png",
+    BADGE_PAGE_STEAMCARDEXCHANGE_LINK: "../img/demonstration/badge_page_steamcardexchange_link.png",
 
     UNKNOWN: ""
 });
@@ -226,5 +238,12 @@ app.controller("SteamBadgesPageController", function ($scope) {
 });
 
 app.controller("SteamBadgePageController", function ($scope) {
-    //$scope.initModelItem($scope.options.ACCOUNT_PAGE_FIX_FOOTER, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_PLAY_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE, $scope);
+    $scope.initModelItem($scope.options.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE, $scope);
 });

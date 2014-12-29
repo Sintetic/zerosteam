@@ -43,11 +43,6 @@
             "run_at": "document_end"
         },
         {
-            "matches": [ "*://steamcommunity.com/id/*/gamecards/*/*"],
-            "js": ["/js/lib/jquery.js", "js/content/content_game_badges.js" ],
-            "run_at": "document_end"
-        },
-        {
             "matches": [ "*://steamcommunity.com/id/*/gamecards/*"],
             "js": ["/js/lib/jquery.js", "js/content/content_game_badges.js" ],
             "run_at": "document_end"

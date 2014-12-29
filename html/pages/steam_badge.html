@@ -1,1 +1,78 @@
-<div class="extension-todo">В разработке</div>
+<div ng-controller="SteamBadgePageController">
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок информации о значке</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.BADGE_PAGE_HEADER_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <div class="extension-card-checkbox-with-screenshot">
+            <md-checkbox ng-init="steamCardExchangeLink = options.BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW"
+                         ng-model="data[steamCardExchangeLink]"
+                         ng-checked="setToLocalStorage(steamCardExchangeLink)">
+                Отобразить ccылку на SteamCardExchange
+            </md-checkbox>
+            <md-button ng-click="showScreenshot($event, demonstrations.BADGE_PAGE_STEAMCARDEXCHANGE_LINK)">
+                Демонстрация
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="setInProfileButtonHide = options.BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE"
+                     ng-model="data[setInProfileButtonHide]"
+                     ng-checked="setToLocalStorage(setInProfileButtonHide)">
+            Скрыть кнопку "Отобразить этот значок в профиле"
+        </md-checkbox>
+
+        <md-checkbox ng-init="howGetMoreHide = options.BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE"
+                     ng-model="data[howGetMoreHide]"
+                     ng-checked="setToLocalStorage(howGetMoreHide)">
+            Скрыть кнопку "Как получить больше карточек?"
+        </md-checkbox>
+
+        <md-checkbox ng-init="playButtonHide = options.BADGE_PAGE_PLAY_BUTTON_HIDE"
+                     ng-model="data[playButtonHide]"
+                     ng-checked="setToLocalStorage(playButtonHide)">
+            Скрыть кнопку "Играть"
+        </md-checkbox>
+
+        <md-checkbox ng-init="hoursInGameLabelHide = options.BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE"
+                     ng-model="data[hoursInGameLabelHide]"
+                     ng-checked="setToLocalStorage(hoursInGameLabelHide)">
+            Скрыть количество часов, проведённых в игре
+        </md-checkbox>
+
+        <md-checkbox ng-init="moreSetHide = options.BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE"
+                     ng-model="data[moreSetHide]"
+                     ng-checked="setToLocalStorage(moreSetHide)">
+            Скрыть подсказку "Повысьте уровень значка, собрав ещё один набор карточек"
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Список друзей с таким значком</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="friendsBlockHide = options.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE"
+                     ng-model="data[friendsBlockHide]"
+                     ng-checked="setToLocalStorage(friendsBlockHide)">
+            Скрыть список
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Список недостающих карточек</h2>
+        </div>
+
+        <md-checkbox ng-init="tradingForumButtonHide = options.BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE"
+                     ng-model="data[tradingForumButtonHide]"
+                     ng-checked="setToLocalStorage(tradingForumButtonHide)">
+            Скрыть кнопку "Посетить форум сообщества"
+        </md-checkbox>
+    </md-card>
+</div>

@@ -85,6 +85,7 @@ chrome.extension.sendRequest({
 }, function (response) {
     console.log(response);
     if (response.data == 'true') {
+        // todo получать список языков в response
         jQuery('#language_dropdown').find('.popup_menu_item').each(function () {
             if (jQuery(this).attr('href').indexOf('translation') == -1) {
                 var languageList = "english russian";
