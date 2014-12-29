@@ -70,4 +70,23 @@
             </md-button>
         </div>
     </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Список языков</h2>
+        </div>
+
+        <md-checkbox ng-init="simplifyLanguageList = options.COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY"
+                     ng-model="data[simplifyLanguageList]"
+                     ng-checked="setToLocalStorage(simplifyLanguageList)">
+            Сократить список языков (оставить только русский и английский)
+        </md-checkbox>
+
+        <md-checkbox ng-init="supportTranslateSteamHide = options.COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE"
+                     ng-model="data[supportTranslateSteamHide]"
+                     ng-checked="setToLocalStorage(supportTranslateSteamHide)">
+            Убрать пункт "Помогите перевести Steam"
+        </md-checkbox>
+
+    </md-card>
 </div>

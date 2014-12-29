@@ -78,3 +78,30 @@ chrome.extension.sendRequest({
         });
     }
 });
+
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY"
+}, function (response) {
+    console.log(response);
+    if (response.data == 'true') {
+        jQuery('#language_dropdown').find('.popup_menu_item').each(function () {
+            if (jQuery(this).attr('href').indexOf('translation') == -1) {
+                var languageList = "english russian";
+                var language = jQuery(this).attr('href').replace('?l=', '');
+                if (languageList.indexOf(language) == -1) {
+                    jQuery(this).remove();
+                }
+            }
+        });
+    }
+});
+
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE"
+}, function (response) {
+    if (response.data == 'true') {
+        jQuery('#language_dropdown').find('.popup_menu_item[href*=translation]').remove();
+    }
+});
