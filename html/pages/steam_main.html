@@ -1,51 +1,22 @@
 <div ng-controller="MainSteamPageController">
     <md-card style="background-color: white">
-
         <div class="extension-card-title">
-            <h2>Правый верхний блок страницы</h2>
-            <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_HEADER_RIGHT_BLOCK)">
-                Скриншот
-            </md-button>
+            <h2>Контент страницы</h2>
         </div>
-
         <div class="extension-card-checkbox-with-screenshot">
-            <md-checkbox ng-init="headerFloatRight = options.MAIN_PAGE_HEADER_FLOAT_RIGHT"
-                         ng-model="data[headerFloatRight]"
-                         ng-checked="setToLocalStorage(headerFloatRight)">
-                Выровнять блок по левому краю
+            <md-checkbox ng-init="floatCenter = options.MAIN_STORE_PAGE_FLOAT_CENTER"
+                         ng-model="data[floatCenter]"
+                         ng-checked="setToLocalStorage(floatCenter)">
+                Выровнять по центру, как и на остальных страницах магазина
             </md-checkbox>
 
-            <md-button ng-click="showScreenshot($event, demonstrations.MAIN_PAGE_HEADER_FLOAT_RIGHT)">
-                Демонстрация
-            </md-button>
-        </div>
-
-    </md-card>
-
-    <md-card style="background-color: white">
-
-        <div class="extension-card-title">
-            <h2>Глобальное меню</h2>
-            <md-button ng-click="showScreenshot($event, screenshots.COMMON_PAGE_GLOBAL_MENU)">
-                Скриншот
-            </md-button>
-        </div>
-
-        <div class="extension-card-checkbox-with-screenshot">
-            <md-checkbox ng-init="globalMenuFloatRight = options.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT"
-                         ng-model="data[globalMenuFloatRight]"
-                         ng-checked="setToLocalStorage(globalMenuFloatRight)">
-                Выровнять блок по правому краю
-            </md-checkbox>
-
-            <md-button ng-click="showScreenshot($event, demonstrations.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT)">
+            <md-button ng-click="showScreenshot($event, demonstrations.MAIN_STORE_PAGE_FLOAT_CENTER)">
                 Демонстрация
             </md-button>
         </div>
     </md-card>
 
     <md-card style="background-color: white">
-
         <div class="extension-card-title">
             <h2>Блок "Просмотр по жанру"</h2>
             <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_BROWSE_BY_GENRE_BLOCK)">
@@ -57,6 +28,52 @@
                      ng-checked="setToLocalStorage(browseByGenre)">
             Скрывать
         </md-checkbox>
+    </md-card>
 
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Рекомендованные метки"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.MAIN_PAGE_BROWSE_BY_RECOMMENDED_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="browseByRecommended = options.MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK"
+                     ng-model="data[browseByRecommended]"
+                     ng-checked="setToLocalStorage(browseByRecommended)">
+            Скрывать
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Ознакомьтесь с вашим списком"</h2>
+        </div>
+        <md-checkbox ng-init="exploreBlock = options.MAIN_PAGE_HIDE_EXPLORE_BLOCK"
+                     ng-model="data[exploreBlock]"
+                     ng-checked="setToLocalStorage(exploreBlock)">
+            Скрывать
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Блок "Кураторы"</h2>
+        </div>
+        <md-checkbox ng-init="curatorsBlock = options.MAIN_PAGE_HIDE_CURATORS_BLOCK"
+                     ng-model="data[curatorsBlock]"
+                     ng-checked="setToLocalStorage(curatorsBlock)">
+            Скрывать
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Отключить бесконечный список рекомендаций в футере</h2>
+        </div>
+        <md-checkbox ng-init="removeFooter = options.MAIN_PAGE_REMOVE_ENDLESS_FOOTER"
+                     ng-model="data[removeFooter]"
+                     ng-checked="setToLocalStorage(removeFooter)">
+            Скрывать
+        </md-checkbox>
     </md-card>
 </div>

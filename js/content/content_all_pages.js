@@ -83,7 +83,6 @@ chrome.extension.sendRequest({
     method: "getLocalStorage",
     key: "COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY"
 }, function (response) {
-    console.log(response);
     if (response.data == 'true') {
         // todo получать список языков в response
         jQuery('#language_dropdown').find('.popup_menu_item').each(function () {

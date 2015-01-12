@@ -39,14 +39,20 @@ app.constant('OPTIONS', {
     COMMON_PAGE_FOOTER_LOGO_FIX: "COMMON_PAGE_FOOTER_LOGO_FIX",
     COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY: "COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY",
     COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE: "COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE",
-    MAIN_PAGE_HEADER_FLOAT_RIGHT: "MAIN_PAGE_HEADER_FLOAT_RIGHT",
-    MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT",
+
+    MAIN_STORE_PAGE_FLOAT_CENTER: "MAIN_STORE_PAGE_FLOAT_CENTER",
     MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK: "MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK",
+    MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK: "MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK",
+    MAIN_PAGE_HIDE_EXPLORE_BLOCK: "MAIN_PAGE_HIDE_EXPLORE_BLOCK",
+    MAIN_PAGE_HIDE_CURATORS_BLOCK: "MAIN_PAGE_HIDE_CURATORS_BLOCK",
+    MAIN_PAGE_REMOVE_ENDLESS_FOOTER: "MAIN_PAGE_REMOVE_ENDLESS_FOOTER",
+
     APP_PAGE_BLOCKS_EXPAND: "APP_PAGE_BLOCKS_EXPAND",
     APP_PAGE_MARK_BLOCK_HIDE: "APP_PAGE_MARK_BLOCK_HIDE",
     APP_PAGE_MAKE_REVIEW_BLOCK_HIDE: "APP_PAGE_MAKE_REVIEW_BLOCK_HIDE",
     APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE: "APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE",
     APP_PAGE_CURATORS_BLOCK_HIDE: "APP_PAGE_CURATORS_BLOCK_HIDE",
+
     ACCOUNT_PAGE_FIX_FOOTER: "ACCOUNT_PAGE_FIX_FOOTER",
     ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE: "ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE",
     ACCOUNT_PAGE_TAXES_BLOCK_HIDE: "ACCOUNT_PAGE_TAXES_BLOCK_HIDE",
@@ -55,11 +61,13 @@ app.constant('OPTIONS', {
     ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW",
     ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW",
     ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW: "ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW",
+
     BADGES_PAGE_REMAINING_DROP_LABEL_SHOW: "BADGES_PAGE_REMAINING_DROP_LABEL_SHOW",
     BADGES_PAGE_HEADER_SUPPORT_HIDE: "BADGES_PAGE_HEADER_SUPPORT_HIDE",
     BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE",
     BADGES_PAGE_PLAY_BUTTON_HIDE: "BADGES_PAGE_PLAY_BUTTON_HIDE",
     BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE: "BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE",
+
     BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW: "BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW",
     BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE: "BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE",
     BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE: "BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE",
@@ -75,18 +83,23 @@ app.constant('OPTIONS', {
 app.constant('SCREENSHOTS', {
     COMMON_PAGE_GLOBAL_MENU: "../img/screenshot/common_page_global_menu.png",
     COMMON_PAGE_STORE_FOOTER: "../img/screenshot/common_page_store_footer_block.png",
-    MAIN_PAGE_HEADER_RIGHT_BLOCK: "../img/screenshot/common_page_header_right_block.png",
+
     MAIN_PAGE_BROWSE_BY_GENRE_BLOCK: "../img/screenshot/browse_by_genre_block.png",
+    MAIN_PAGE_BROWSE_BY_RECOMMENDED_BLOCK: "../img/screenshot/browse_by_recommended_block.png",
+
     APP_PAGE_MARK_BLOCK: "../img/screenshot/app_page_mark_block.png",
     APP_PAGE_MAKE_REVIEW_BLOCK: "../img/screenshot/app_page_make_review_block.png",
     APP_PAGE_SHARE_AND_ABUSE_BLOCK: "../img/screenshot/app_page_share_and_abuse_block.png",
     APP_PAGE_CURATORS_BLOCK: "../img/screenshot/app_page_curators_block.png",
+
     ACCOUNT_PAGE_FAMILY_SHARING_BLOCK: "../img/screenshot/account_page_family_sharing_block.png",
     ACCOUNT_PAGE_TAXES_BLOCK: "../img/screenshot/account_page_taxes_block.png",
     ACCOUNT_PAGE_EMAIL_BLOCK: "../img/screenshot/account_page_email_block.png",
     ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK: "../img/screenshot/account_page_family_viewing_block.png",
+
     BADGES_PAGE_HEADER: "../img/screenshot/badges_page_header.png",
     BADGES_PAGE_LIST_ITEM: "../img/screenshot/badges_page_list_item.png",
+
     BADGE_PAGE_HEADER_BLOCK: "../img/screenshot/badge_page_header_block.png",
     BADGE_PAGE_FRIENDS_WITH_THIS_BADGE: "../img/screenshot/badge_page_friends_with_this_badge.png",
 
@@ -94,15 +107,18 @@ app.constant('SCREENSHOTS', {
 });
 
 app.constant('DEMONSTRATIONS', {
-    MAIN_PAGE_HEADER_FLOAT_RIGHT: "../img/demonstration/main_page_header_block_float_right.png",
-    MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT: "../img/demonstration/main_page_global_menu_float_right.png",
+    MAIN_STORE_PAGE_FLOAT_CENTER: "../img/demonstration/main_store_page_float_center.png",
+
     ACCOUNT_PAGE_FIX_FOOTER: "../img/demonstration/account_page_fix_footer.png",
     ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_store_statistic_block_show.png",
     ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_in_game_statistic_block_show.png",
     ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW: "../img/demonstration/account_page_community_market_statistic_block_show.png",
+
     COMMON_PAGE_FOOTER_LOGO_FIX: "../img/demonstration/common_page_footer_logo_fix.png",
+
     BADGES_PAGE_REMAINING_DROP_LABEL_SHOW: "../img/demonstration/badges_page_remaining_drop_label_show.png",
     BADGES_PAGE_HEADER_SUPPORT_HIDE: "../img/demonstration/badges_page_header_support_hide.png",
+
     BADGE_PAGE_HEADER_SUPPORT_HIDE: "../img/demonstration/badges_page_header_support_hide.png",
     BADGE_PAGE_STEAMCARDEXCHANGE_LINK: "../img/demonstration/badge_page_steamcardexchange_link.png",
 
@@ -160,7 +176,7 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
         return '/html/options.html#' + ROUTES[url];
     };
 
-    $scope.idSelectedItem = null;
+    $scope.idSelectedItem = 'steam-pages#common'; // переменная для текущей выбранной страницы
     $scope.setSelected = function (idSelectedItem) {
         $scope.idSelectedItem = idSelectedItem;
     };
@@ -205,9 +221,12 @@ app.controller("CommonSteamPageController", function ($scope) {
 });
 
 app.controller("MainSteamPageController", function ($scope) {
-    $scope.initModelItem($scope.options.MAIN_PAGE_HEADER_FLOAT_RIGHT, $scope);
+    $scope.initModelItem($scope.options.MAIN_STORE_PAGE_FLOAT_CENTER, $scope);
     $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_GLOBAL_MENU_FLOAT_RIGHT, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_EXPLORE_BLOCK, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_CURATORS_BLOCK, $scope);
+    $scope.initModelItem($scope.options.MAIN_PAGE_REMOVE_ENDLESS_FOOTER, $scope);
 });
 
 app.controller("SteamAppPageController", function ($scope) {
