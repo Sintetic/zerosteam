@@ -3,7 +3,7 @@
 var menuCommonItemList = [
     {
         id: 'steam-pages#common',
-        title: 'Общее для всех страниц Steam',
+        title: 'Общее для всех страниц',
         url: 'STEAM_COMMON_PAGE_URL'
     },
     {
@@ -35,6 +35,11 @@ var menuCommonItemList = [
         id: 'steam-pages#badge',
         title: 'Страница одного значка',
         url: 'STEAM_BADGE_PAGE_URL'
+    },
+    {
+        id: 'steam-pages#guides',
+        title: 'Список руководств',
+        url: 'STEAM_GUIDES_PAGE_URL'
     },
     {
         id: 'extension-pages#about',

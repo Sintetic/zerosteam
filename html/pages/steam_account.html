@@ -8,20 +8,13 @@
             <md-checkbox ng-init="fixFooter = options.ACCOUNT_PAGE_FIX_FOOTER"
                          ng-model="data[fixFooter]"
                          ng-checked="setToLocalStorage(fixFooter)">
-                Добавить небольшой отступ к футеру для исправление проблемы с "наезжанием" на него контента
+                Добавить небольшой отступ к футеру для исправления проблемы с "наезжанием" на него контента
             </md-checkbox>
 
             <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_FIX_FOOTER)">
                 Демонстрация
             </md-button>
         </div>
-
-        <md-checkbox ng-init=""
-                     ng-disabled="true"
-                     ng-model=""
-                     ng-checked="">
-            Отображать скрытые блоки на странице "Лицензии и подписки" (TODO!)
-        </md-checkbox>
     </md-card>
 
     <md-card style="background-color: white">
@@ -35,7 +28,7 @@
         <md-checkbox ng-init="familySharingBlock = options.ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE"
                      ng-model="data[familySharingBlock]"
                      ng-checked="setToLocalStorage(familySharingBlock)">
-            Скрыть блок
+            Убрать блок
         </md-checkbox>
     </md-card>
 
@@ -50,7 +43,7 @@
         <md-checkbox ng-init="taxesBlock = options.ACCOUNT_PAGE_TAXES_BLOCK_HIDE"
                      ng-model="data[taxesBlock]"
                      ng-checked="setToLocalStorage(taxesBlock)">
-            Скрыть блок
+            Убрать блок
         </md-checkbox>
     </md-card>
 
@@ -65,7 +58,7 @@
         <md-checkbox ng-init="emailBlock = options.ACCOUNT_PAGE_EMAIL_BLOCK_HIDE"
                      ng-model="data[emailBlock]"
                      ng-checked="setToLocalStorage(emailBlock)">
-            Скрыть блок
+            Убрать блок
         </md-checkbox>
     </md-card>
 
@@ -80,7 +73,7 @@
         <md-checkbox ng-init="familyViewingBlock = options.ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE"
                      ng-model="data[familyViewingBlock]"
                      ng-checked="setToLocalStorage(familyViewingBlock)">
-            Скрыть блок
+            Убрать блок
         </md-checkbox>
     </md-card>
 
@@ -120,7 +113,8 @@
                 Добавить блок "Статистика" на страницу "Операции на торговой площадке"
             </md-checkbox>
 
-            <md-button ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW)">
+            <md-button
+                    ng-click="showScreenshot($event, demonstrations.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW)">
                 Демонстрация
             </md-button>
         </div>

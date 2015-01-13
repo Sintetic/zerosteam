@@ -1,10 +1,13 @@
-chrome.extension.sendRequest({method: "getLocalStorage", key: "useOnGuidePageEngine"}, function (response) {
+chrome.extension.sendRequest({
+    method: "getLocalStorage",
+    key: "GUIDES_PAGE_LIST_ITEM_REAL_LINK"
+}, function (response) {
     if (response.data == 'true') {
         jQuery('.workshopItemCollectionContainer').each(function () {
-            var link = jQuery(this).find('div[class=workshopItemCollection]').attr('onclick').split('href=')[1];
-            var title = jQuery(this).find('div[class=workshopItemTitle]').html();
-            jQuery(this).find('div[class=workshopItemTitle]').html('<a href=' + link + ' target="_blank">' + title + '</a>');
-            jQuery(this).find('div[class=workshopItemCollection]').attr('onclick', "window.open("+link+"), _blank");
-        })
+            var url = jQuery(this).find('.workshopItemCollection').attr('onclick')
+                .replace('top.location.href=', '').replace('\'', '');
+            jQuery(this).find('.workshopItemCollection').removeAttr('onclick');
+            jQuery(this).wrap('<a href="' + url + '"><a>');
+        });
     }
 });

@@ -25,6 +25,9 @@ app.constant('ROUTES', {
     STEAM_BADGE_PAGE_URL: "/steam/badge",
     STEAM_BADGE_PAGE_TEMPLATE: "../html/pages/steam_badge.html",
 
+    STEAM_GUIDES_PAGE_URL: "/steam/guides",
+    STEAM_GUIDES_PAGE_TEMPLATE: "../html/pages/steam_guides.html",
+
     EXTENSION_ABOUT_PAGE_URL: "/steam/about",
     EXTENSION_ABOUT_PAGE_TEMPLATE: "../html/pages/extension-about.html"
 });
@@ -76,6 +79,8 @@ app.constant('OPTIONS', {
     BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE: "BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE",
     BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE: "BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE",
     BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE: "BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE",
+
+    GUIDES_PAGE_LIST_ITEM_REAL_LINK: "GUIDES_PAGE_LIST_ITEM_REAL_LINK",
 
     UNKNOWN: ""
 });
@@ -167,6 +172,11 @@ app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTE
     $stateProvider.state(ROUTES.EXTENSION_ABOUT_PAGE_URL, {
         url: ROUTES.EXTENSION_ABOUT_PAGE_URL,
         templateUrl: ROUTES.EXTENSION_ABOUT_PAGE_TEMPLATE
+    });
+    /*Страница со списком руководств*/
+    $stateProvider.state(ROUTES.STEAM_GUIDES_PAGE_URL, {
+        url: ROUTES.STEAM_GUIDES_PAGE_URL,
+        templateUrl: ROUTES.STEAM_GUIDES_PAGE_TEMPLATE
     });
 });
 
@@ -265,4 +275,8 @@ app.controller("SteamBadgePageController", function ($scope) {
     $scope.initModelItem($scope.options.BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
     $scope.initModelItem($scope.options.BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE, $scope);
     $scope.initModelItem($scope.options.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE, $scope);
+});
+
+app.controller("SteamGuidesPageController", function ($scope) {
+    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_REAL_LINK, $scope);
 });
