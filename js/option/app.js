@@ -80,7 +80,14 @@ app.constant('OPTIONS', {
     BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE: "BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE",
     BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE: "BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE",
 
+
+    GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON: "GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON",
+    GUIDES_PAGE_HEADER_HIDE_SUBTITLE: "GUIDES_PAGE_HEADER_HIDE_SUBTITLE",
     GUIDES_PAGE_LIST_ITEM_REAL_LINK: "GUIDES_PAGE_LIST_ITEM_REAL_LINK",
+    GUIDES_PAGE_LIST_ITEM_HIDE_RATING: "GUIDES_PAGE_LIST_ITEM_HIDE_RATING",
+    GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE: "GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE",
+    GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR: "GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR",
+
 
     UNKNOWN: ""
 });
@@ -107,6 +114,9 @@ app.constant('SCREENSHOTS', {
 
     BADGE_PAGE_HEADER_BLOCK: "../img/screenshot/badge_page_header_block.png",
     BADGE_PAGE_FRIENDS_WITH_THIS_BADGE: "../img/screenshot/badge_page_friends_with_this_badge.png",
+
+    GUIDES_PAGE_LIST_ITEM: "../img/screenshot/guides_page__list_item.png",
+    GUIDES_PAGE_HEADER: "../img/screenshot/guides_page_header.png",
 
     UNKNOWN: ""
 });
@@ -278,5 +288,10 @@ app.controller("SteamBadgePageController", function ($scope) {
 });
 
 app.controller("SteamGuidesPageController", function ($scope) {
+    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON, $scope);
+    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_HIDE_SUBTITLE, $scope);
     $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_REAL_LINK, $scope);
+    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_RATING, $scope);
+    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE, $scope);
+    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR, $scope);
 });

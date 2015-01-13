@@ -1,13 +1,61 @@
 <div ng-controller="SteamGuidesPageController">
     <md-card style="background-color: white">
         <div class="extension-card-title">
+            <h2>Шапка списка руководств</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.GUIDES_PAGE_HEADER)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="showMakeGuid = options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON"
+                     ng-model="data[showMakeGuid]"
+                     ng-checked="setToLocalStorage(showMakeGuid)">
+            Добавить кнопку "Написать руководство" (TODO: демонстрация)
+        </md-checkbox>
+
+        <md-checkbox ng-init="hideSubtitle = options.GUIDES_PAGE_HEADER_HIDE_SUBTITLE"
+                     ng-model="data[hideSubtitle]"
+                     ng-checked="setToLocalStorage(hideSubtitle)">
+            Убрать вводный текст (TODO: демонстрация)
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
             <h2>Список руководств</h2>
         </div>
 
         <md-checkbox ng-init="realLink = options.GUIDES_PAGE_LIST_ITEM_REAL_LINK"
                      ng-model="data[realLink]"
                      ng-checked="setToLocalStorage(realLink)">
-            Сделать элементы списка полноценными ссылками
+            Сделать элементы списка полноценными ссылками (TODO! В данный момент неожиданное поведение не работает)
+        </md-checkbox>
+    </md-card>
+
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Элемент списка</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.GUIDES_PAGE_LIST_ITEM)">
+                Скриншот
+            </md-button>
+        </div>
+
+        <md-checkbox ng-init="hideRating = options.GUIDES_PAGE_LIST_ITEM_HIDE_RATING"
+                     ng-model="data[hideRating]"
+                     ng-checked="setToLocalStorage(hideRating)">
+            Убрать рейтинг
+        </md-checkbox>
+
+        <md-checkbox ng-init="hideTitleUnderline = options.GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE"
+                     ng-model="data[hideTitleUnderline]"
+                     ng-checked="setToLocalStorage(hideTitleUnderline)">
+            Убрать линию под заголовком
+        </md-checkbox>
+
+        <md-checkbox ng-init="hideAuthor = options.GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR"
+                     ng-model="data[hideAuthor]"
+                     ng-checked="setToLocalStorage(hideAuthor)">
+            Убрать имя автора
         </md-checkbox>
     </md-card>
 </div>
