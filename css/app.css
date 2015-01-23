@@ -56,6 +56,21 @@
     margin-top: 300px;
 }
 
+.extension-input {
+    margin-left: 13px;
+    margin-right: 13px;
+    padding-bottom: 10px;
+}
+
+.extension-input label {
+    font-size: 15px;
+}
+
+.extension-commentary-div {
+    margin-left: 13px;
+    margin-bottom: 10px;
+}
+
 /* стили взяты из демо Angular Material */
 .menu-item {
     background: none;

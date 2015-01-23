@@ -23,6 +23,11 @@
             "run_at": "document_end"
         },
         {
+            "matches": [ "*://steamcommunity.com/id/*/inventory*" ],
+            "js": ["/js/lib/jquery.js", "js/engine/community_inventory_engine.js", "js/content/content_inventory.js"],
+            "run_at": "document_end"
+        },
+        {
             "matches": [ "*://store.steampowered.com/account/*" ],
             "js": ["/js/lib/jquery.js", "/js/engine/store_statistic_engine.js", "js/content/content_account.js"],
             "run_at": "document_end"

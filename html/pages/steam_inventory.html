@@ -7,22 +7,25 @@
             </md-button>
         </div>
 
-        <md-input-container>
-            <label>Title</label>
-            <input>
-        </md-input-container>
-
-        <!--<md-checkbox ng-init="showMakeGuid = options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON"
-                     ng-model="data[showMakeGuid]"
-                     ng-checked="setToLocalStorage(showMakeGuid)">
-            Добавить кнопку "Написать руководство" (TODO: демонстрация)
+        <md-checkbox ng-init="hideGamesTab = options.INVENTORY_PAGE_HIDE_GAMES_TAB"
+                     ng-model="data[hideGamesTab]"
+                     ng-checked="setToLocalStorage(hideGamesTab)">
+            Сократить количество игровых табов
         </md-checkbox>
 
-        <md-checkbox ng-init="hideSubtitle = options.GUIDES_PAGE_HEADER_HIDE_SUBTITLE"
-                     ng-model="data[hideSubtitle]"
-                     ng-checked="setToLocalStorage(hideSubtitle)">
-            Убрать вводный текст (TODO: демонстрация)
-        </md-checkbox>-->
+        <!-- todo! анимация появления и исчезновения -->
+        <div ng-show="data[hideGamesTab]">
+            <md-input-container class="extension-input">
+                <label>Белый список</label>
+                <input ng-init="whiteList = options.INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST"
+                       ng-model="data[whiteList]"
+                       ng-change="setToLocalStorage(whiteList, 'Steam')">
+            </md-input-container>
+            <div class="extension-commentary-div">Пример заполнения: Steam | Team Fortress 2</div>
+            <div class="extension-commentary-div">Значение по-умолчанию: Steam</div>
+            <div class="extension-commentary-div">Внимание! В дальнейшем пользователь отмечать галочки и белый список наружу торчать не будет</div>
+        </div>
+
     </md-card>
 
 </div>

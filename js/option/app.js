@@ -220,17 +220,33 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
     $rootScope.image = "";
     $rootScope.screenshots = SCREENSHOTS;
     $rootScope.demonstrations = DEMONSTRATIONS;
-    $rootScope.setToLocalStorage = function (name) {
+
+    $rootScope.setToLocalStorage = function (name, defaultValue) {
+        if (defaultValue) {
+            if ($rootScope.data[name] == "") {
+                $rootScope.data[name] = defaultValue;
+            }
+        }
         localStorage[name] = $rootScope.data[name];
     };
+
     $rootScope.getFromLocalStorage = function (name) {
+        if (localStorage[name] == null) {
+            return "";
+        }
+        return localStorage[name];
+    };
+    $rootScope.getBooleanFromLocalStorage = function (name) {
         if (localStorage[name] == null) {
             return false;
         }
         return "true" == localStorage[name];
     };
-    $rootScope.initModelItem = function (optionName, localScope) {
+    $rootScope.initTextModelItem = function (optionName, localScope) {
         localScope.data[optionName] = $scope.getFromLocalStorage(optionName);
+    };
+    $rootScope.initBooleanModelItem = function (optionName, localScope) {
+        localScope.data[optionName] = $scope.getBooleanFromLocalStorage(optionName);
     };
     $rootScope.showScreenshot = function (event, imagePath) {
         $mdDialog.show({
@@ -242,74 +258,74 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
 });
 
 app.controller("CommonSteamPageController", function ($scope) {
-    $scope.initModelItem($scope.options.COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_STORE_FOOTER_TOP_HIDE, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_STORE_FOOTER_BOTTOM_HIDE, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_FOOTER_LOGO_FIX, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY, $scope);
-    $scope.initModelItem($scope.options.COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_HEADER_HIDE_BUTTON_DOWNLOAD, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_HEADER_REMOVE_VIEW_PROFILE_IN_DROPDONW_LIST, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_ABOUT, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_GLOBAL_MENU_HIDE_SUPPORT, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_STORE_FOOTER_TOP_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_STORE_FOOTER_BOTTOM_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_FOOTER_LOGO_FIX, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_LANGUAGE_LIST_SIMPLIFY, $scope);
+    $scope.initBooleanModelItem($scope.options.COMMON_PAGE_SUPPORT_TRANSLATE_STEAM_HIDE, $scope);
 });
 
 app.controller("MainSteamPageController", function ($scope) {
-    $scope.initModelItem($scope.options.MAIN_STORE_PAGE_FLOAT_CENTER, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_EXPLORE_BLOCK, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_HIDE_CURATORS_BLOCK, $scope);
-    $scope.initModelItem($scope.options.MAIN_PAGE_REMOVE_ENDLESS_FOOTER, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_STORE_PAGE_FLOAT_CENTER, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_GENRE_BLOCK, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_PAGE_HIDE_BROWSE_BY_RECOMMENDED_BLOCK, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_PAGE_HIDE_EXPLORE_BLOCK, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_PAGE_HIDE_CURATORS_BLOCK, $scope);
+    $scope.initBooleanModelItem($scope.options.MAIN_PAGE_REMOVE_ENDLESS_FOOTER, $scope);
 });
 
 app.controller("SteamAppPageController", function ($scope) {
-    $scope.initModelItem($scope.options.APP_PAGE_BLOCKS_EXPAND, $scope);
-    $scope.initModelItem($scope.options.APP_PAGE_MARK_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.APP_PAGE_CURATORS_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_BLOCKS_EXPAND, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_MARK_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_CURATORS_BLOCK_HIDE, $scope);
 });
 
 app.controller("SteamAccountPageController", function ($scope) {
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_FIX_FOOTER, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_TAXES_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_EMAIL_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW, $scope);
-    $scope.initModelItem($scope.options.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_FIX_FOOTER, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_TAXES_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_EMAIL_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_FAMILY_VIEWING_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_STORE_STATISTIC_BLOCK_SHOW, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_IN_GAME_STATISTIC_BLOCK_SHOW, $scope);
+    $scope.initBooleanModelItem($scope.options.ACCOUNT_PAGE_COMMUNITY_MARKET_STATISTIC_BLOCK_SHOW, $scope);
 });
 
 app.controller("SteamBadgesPageController", function ($scope) {
-    $scope.initModelItem($scope.options.BADGES_PAGE_REMAINING_DROP_LABEL_SHOW, $scope);
-    $scope.initModelItem($scope.options.BADGES_PAGE_HEADER_SUPPORT_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGES_PAGE_PLAY_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGES_PAGE_REMAINING_DROP_LABEL_SHOW, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGES_PAGE_HEADER_SUPPORT_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGES_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGES_PAGE_PLAY_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGES_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
 });
 
 app.controller("SteamBadgePageController", function ($scope) {
-    $scope.initModelItem($scope.options.BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_PLAY_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE, $scope);
-    $scope.initModelItem($scope.options.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_STEAMCARDEXCHANGE_LINK_SHOW, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_SET_IN_PROFILE_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_HOW_GET_MORE_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_MORE_GAMESCARDS_SET_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_PLAY_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_HOURS_IN_GAME_LABEL_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_TRADING_FORUM_BUTTON_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.BADGE_PAGE_FRIENDS_WITH_THIS_BADGE_BLOCK_HIDE, $scope);
 });
 
 app.controller("SteamGuidesPageController", function ($scope) {
-    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON, $scope);
-    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_HIDE_SUBTITLE, $scope);
-    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_REAL_LINK, $scope);
-    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_RATING, $scope);
-    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE, $scope);
-    $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_HEADER_HIDE_SUBTITLE, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_REAL_LINK, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_RATING, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE, $scope);
+    $scope.initBooleanModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR, $scope);
 });
 
 app.controller("InventoryGuidesPageController", function ($scope) {
-    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON, $scope);
-
+    $scope.initBooleanModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB, $scope);
+    $scope.initTextModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST, $scope);
 });
