@@ -42,6 +42,11 @@ var menuCommonItemList = [
         url: 'STEAM_GUIDES_PAGE_URL'
     },
     {
+        id: 'steam-pages#inventory',
+        title: 'Инвентарь',
+        url: 'STEAM_INVENTORY_PAGE_URL'
+    },
+    {
         id: 'extension-pages#about',
         title: 'О расширении',
         url: 'EXTENSION_ABOUT_PAGE_URL'

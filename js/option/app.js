@@ -28,6 +28,9 @@ app.constant('ROUTES', {
     STEAM_GUIDES_PAGE_URL: "/steam/guides",
     STEAM_GUIDES_PAGE_TEMPLATE: "../html/pages/steam_guides.html",
 
+    STEAM_INVENTORY_PAGE_URL: "/steam/inventory",
+    STEAM_INVENTORY_PAGE_TEMPLATE: "../html/pages/steam_inventory.html",
+
     EXTENSION_ABOUT_PAGE_URL: "/steam/about",
     EXTENSION_ABOUT_PAGE_TEMPLATE: "../html/pages/extension-about.html"
 });
@@ -88,6 +91,9 @@ app.constant('OPTIONS', {
     GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE: "GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE",
     GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR: "GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR",
 
+    INVENTORY_PAGE_HIDE_GAMES_TAB: "INVENTORY_PAGE_HIDE_GAMES_TAB",
+    INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST: "INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST",
+
 
     UNKNOWN: ""
 });
@@ -117,6 +123,8 @@ app.constant('SCREENSHOTS', {
 
     GUIDES_PAGE_LIST_ITEM: "../img/screenshot/guides_page__list_item.png",
     GUIDES_PAGE_HEADER: "../img/screenshot/guides_page_header.png",
+
+    INVENTORY_PAGE_HEAD_TABS_BLOCK: "../img/screenshot/inventory_page_head_tabs_block.png",
 
     UNKNOWN: ""
 });
@@ -187,6 +195,11 @@ app.config(function ($compileProvider, $stateProvider, $urlRouterProvider, ROUTE
     $stateProvider.state(ROUTES.STEAM_GUIDES_PAGE_URL, {
         url: ROUTES.STEAM_GUIDES_PAGE_URL,
         templateUrl: ROUTES.STEAM_GUIDES_PAGE_TEMPLATE
+    });
+    /*Страница со списком руководств*/
+    $stateProvider.state(ROUTES.STEAM_INVENTORY_PAGE_URL, {
+        url: ROUTES.STEAM_INVENTORY_PAGE_URL,
+        templateUrl: ROUTES.STEAM_INVENTORY_PAGE_TEMPLATE
     });
 });
 
@@ -294,4 +307,9 @@ app.controller("SteamGuidesPageController", function ($scope) {
     $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_RATING, $scope);
     $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_TITLE_UNDERLINE, $scope);
     $scope.initModelItem($scope.options.GUIDES_PAGE_LIST_ITEM_HIDE_AUTHOR, $scope);
+});
+
+app.controller("InventoryGuidesPageController", function ($scope) {
+    $scope.initModelItem($scope.options.GUIDES_PAGE_HEADER_SHOW_MAKE_GUIDE_BUTTON, $scope);
+
 });
