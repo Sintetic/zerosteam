@@ -74,3 +74,47 @@
         </md-checkbox>
     </md-card>
 </div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
+            <h2>Блок "Похожие товары"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_RECOMMENDED_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="recommendedBlock = options.APP_PAGE_RECOMMENDED_BLOCK_HIDE"
+                     ng-model="data[recommendedBlock]"
+                     ng-checked="setToLocalStorage(recommendedBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>
+
+<div ng-controller="SteamAppPageController">
+    <md-card class="extension-card">
+        <div class="extension-card-title">
+            <h2>Блок "Обзоры"</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.APP_PAGE_REVIEW_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="reviewFilterLabelHide = options.APP_PAGE_REVIEW_BLOCK_FILTER_LABEL_HIDE"
+                     ng-model="data[reviewFilterLabelHide]"
+                     ng-hide="data[reviewsBlock]"
+                     ng-checked="setToLocalStorage(reviewFilterLabelHide)">
+            Убрать кнопку "Об обзорах"
+        </md-checkbox>
+        <md-checkbox ng-init="reviewAboutHide = options.APP_PAGE_REVIEW_BLOCK_ABOUT_HIDE"
+                     ng-model="data[reviewAboutHide]"
+                     ng-hide="data[reviewsBlock]"
+                     ng-checked="setToLocalStorage(reviewAboutHide)">
+            Убрать подпись "Фильтр"
+        </md-checkbox>
+        <md-checkbox ng-init="reviewsBlock = options.APP_PAGE_REVIEW_BLOCK_HIDE"
+                     ng-model="data[reviewsBlock]"
+                     ng-checked="setToLocalStorage(reviewsBlock)">
+            Убрать блок
+        </md-checkbox>
+    </md-card>
+</div>

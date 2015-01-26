@@ -58,6 +58,10 @@ app.constant('OPTIONS', {
     APP_PAGE_MAKE_REVIEW_BLOCK_HIDE: "APP_PAGE_MAKE_REVIEW_BLOCK_HIDE",
     APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE: "APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE",
     APP_PAGE_CURATORS_BLOCK_HIDE: "APP_PAGE_CURATORS_BLOCK_HIDE",
+    APP_PAGE_RECOMMENDED_BLOCK_HIDE: "APP_PAGE_RECOMMENDED_BLOCK_HIDE",
+    APP_PAGE_REVIEW_BLOCK_HIDE: "APP_PAGE_REVIEW_BLOCK_HIDE",
+    APP_PAGE_REVIEW_BLOCK_FILTER_LABEL_HIDE: "APP_PAGE_REVIEW_BLOCK_FILTER_LABEL_HIDE",
+    APP_PAGE_REVIEW_BLOCK_ABOUT_HIDE: "APP_PAGE_REVIEW_BLOCK_ABOUT_HIDE",
 
     ACCOUNT_PAGE_FIX_FOOTER: "ACCOUNT_PAGE_FIX_FOOTER",
     ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE: "ACCOUNT_PAGE_FAMILY_SHARING_BLOCK_HIDE",
@@ -111,6 +115,8 @@ app.constant('SCREENSHOTS', {
     APP_PAGE_MAKE_REVIEW_BLOCK: "../img/screenshot/app_page_make_review_block.png",
     APP_PAGE_SHARE_AND_ABUSE_BLOCK: "../img/screenshot/app_page_share_and_abuse_block.png",
     APP_PAGE_CURATORS_BLOCK: "../img/screenshot/app_page_curators_block.png",
+    APP_PAGE_RECOMMENDED_BLOCK: "../img/screenshot/app_page_recommended_block.png",
+    APP_PAGE_REVIEW_BLOCK: "../img/screenshot/app_page_review_block.png",
 
     ACCOUNT_PAGE_FAMILY_SHARING_BLOCK: "../img/screenshot/account_page_family_sharing_block.png",
     ACCOUNT_PAGE_TAXES_BLOCK: "../img/screenshot/account_page_taxes_block.png",
@@ -286,6 +292,10 @@ app.controller("SteamAppPageController", function ($scope) {
     $scope.initBooleanModelItem($scope.options.APP_PAGE_MAKE_REVIEW_BLOCK_HIDE, $scope);
     $scope.initBooleanModelItem($scope.options.APP_PAGE_SHARE_AND_ABUSE_BLOCK_HIDE, $scope);
     $scope.initBooleanModelItem($scope.options.APP_PAGE_CURATORS_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_RECOMMENDED_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_REVIEW_BLOCK_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_REVIEW_BLOCK_FILTER_LABEL_HIDE, $scope);
+    $scope.initBooleanModelItem($scope.options.APP_PAGE_REVIEW_BLOCK_ABOUT_HIDE, $scope);
 });
 
 app.controller("SteamAccountPageController", function ($scope) {
