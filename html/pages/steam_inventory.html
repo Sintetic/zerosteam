@@ -2,18 +2,15 @@
     <md-card style="background-color: white">
         <div class="extension-card-title">
             <h2>Шапка инвентаря</h2>
-            <md-button ng-click="showScreenshot($event, screenshots.INVENTORY_PAGE_HEAD_TABS_BLOCK)">
+            <md-button ng-click="showScreenshot($event, screenshots.INVENTORY_PAGE_CONTENT_BLOCK)">
                 Скриншот
             </md-button>
         </div>
-
         <md-checkbox ng-init="hideGamesTab = options.INVENTORY_PAGE_HIDE_GAMES_TAB"
                      ng-model="data[hideGamesTab]"
                      ng-checked="setToLocalStorage(hideGamesTab)">
             Сократить количество игровых табов
         </md-checkbox>
-
-        <!-- todo! анимация появления и исчезновения -->
         <div ng-show="data[hideGamesTab]">
             <md-input-container class="extension-input">
                 <label>Белый список (заполняется через запятую)</label>
@@ -22,8 +19,26 @@
                        ng-change="setToLocalStorage(whiteList)">
             </md-input-container>
             <div class="extension-commentary-div">Внимание! Инвентарь Steam всегда в белом списке.</div>
+            <div class="extension-commentary-div">Внимание! Опция применяется ко всем просматриваемым инвентарям.</div>
         </div>
-
     </md-card>
 
+    <md-card style="background-color: white">
+        <div class="extension-card-title">
+            <h2>Инвентарь</h2>
+            <md-button ng-click="showScreenshot($event, screenshots.INVENTORY_PAGE_CONTENT_BLOCK)">
+                Скриншот
+            </md-button>
+        </div>
+        <md-checkbox ng-init="hideLogo = options.INVENTORY_PAGE_HIDE_LOGO"
+                     ng-model="data[hideLogo]"
+                     ng-checked="setToLocalStorage(hideLogo)">
+            Скрыть логотип
+        </md-checkbox>
+        <md-checkbox ng-init="hideFilter = options.INVENTORY_PAGE_HIDE_FILTER"
+                     ng-model="data[hideFilter]"
+                     ng-checked="setToLocalStorage(hideFilter)">
+            Скрыть фильтрацию
+        </md-checkbox>
+    </md-card>
 </div>

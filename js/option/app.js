@@ -93,6 +93,8 @@ app.constant('OPTIONS', {
 
     INVENTORY_PAGE_HIDE_GAMES_TAB: "INVENTORY_PAGE_HIDE_GAMES_TAB",
     INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST: "INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST",
+    INVENTORY_PAGE_HIDE_LOGO: "INVENTORY_PAGE_HIDE_LOGO",
+    INVENTORY_PAGE_HIDE_FILTER: "INVENTORY_PAGE_HIDE_FILTER",
 
 
     UNKNOWN: ""
@@ -125,6 +127,7 @@ app.constant('SCREENSHOTS', {
     GUIDES_PAGE_HEADER: "../img/screenshot/guides_page_header.png",
 
     INVENTORY_PAGE_HEAD_TABS_BLOCK: "../img/screenshot/inventory_page_head_tabs_block.png",
+    INVENTORY_PAGE_CONTENT_BLOCK: "../img/screenshot/inventory_page_content_block.png",
 
     UNKNOWN: ""
 });
@@ -327,22 +330,6 @@ app.controller("SteamGuidesPageController", function ($scope) {
 app.controller("InventoryGuidesPageController", function ($scope) {
     $scope.initBooleanModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB, $scope);
     $scope.initTextModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST, $scope);
-
-    $scope.getInventoryGamesName = function (url) {
-        var nameList;
-        $.ajax({
-            async: false,
-            type: 'post',
-            dataType: 'html',
-            url: "http://steamcommunity.com/id/" + url + "/inventory/",
-            success: function (data) {
-                var page = $(data);
-                var nameDomList = page.find('.games_list_tab_name');
-                for (var iterator = 0; iterator < nameDomList.length; iterator++) {
-                    nameList[iterator] = nameDomList[iterator].innerText;
-                }
-            }
-        });
-    }
-
+    $scope.initBooleanModelItem($scope.options.INVENTORY_PAGE_HIDE_LOGO, $scope);
+    $scope.initBooleanModelItem($scope.options.INVENTORY_PAGE_HIDE_FILTER, $scope);
 });
