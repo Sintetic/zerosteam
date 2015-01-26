@@ -3,9 +3,12 @@ var ROW_SEPARATOR = '<div class="games_list_tab_row_separator"></div>';
 var FINAL_LINE = '<div style="clear: both; height: 0px;" class=""></div>';
 
 var TAB_IN_LINE_COUNT = 4;
-
-var whiteList = 'Team Fortress 2 | Steam'.split(' | ');
+var whiteList = [];
 var storedDom = [];
+
+function initWhiteList(list) {
+    whiteList = list;
+}
 
 function modifyGamesTabBlock() {
     checkWhiteList();
@@ -15,9 +18,7 @@ function modifyGamesTabBlock() {
 
 
 function checkWhiteList() {
-    if (whiteList.length == 0) {
-        whiteList[0] = 'Steam';
-    }
+    whiteList += ", Steam";
 }
 
 function fillStoredDom() {

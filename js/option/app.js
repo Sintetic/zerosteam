@@ -254,7 +254,6 @@ app.controller("CommonController", function ($scope, $rootScope, $mdDialog, ROUT
             targetEvent: event
         })
     };
-
 });
 
 app.controller("CommonSteamPageController", function ($scope) {
@@ -328,4 +327,22 @@ app.controller("SteamGuidesPageController", function ($scope) {
 app.controller("InventoryGuidesPageController", function ($scope) {
     $scope.initBooleanModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB, $scope);
     $scope.initTextModelItem($scope.options.INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST, $scope);
+
+    $scope.getInventoryGamesName = function (url) {
+        var nameList;
+        $.ajax({
+            async: false,
+            type: 'post',
+            dataType: 'html',
+            url: "http://steamcommunity.com/id/" + url + "/inventory/",
+            success: function (data) {
+                var page = $(data);
+                var nameDomList = page.find('.games_list_tab_name');
+                for (var iterator = 0; iterator < nameDomList.length; iterator++) {
+                    nameList[iterator] = nameDomList[iterator].innerText;
+                }
+            }
+        });
+    }
+
 });

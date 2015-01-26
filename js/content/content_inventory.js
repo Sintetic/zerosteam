@@ -13,7 +13,7 @@ function modifyTabsByWhiteList() {
         method: "getLocalStorage",
         key: "INVENTORY_PAGE_HIDE_GAMES_TAB_WHITE_LIST"
     }, function (response) {
-        var whiteList = response.data.split(' | ');
+        initWhiteList(response.data.split(', '));
         modifyGamesTabBlock();
     });
 }
